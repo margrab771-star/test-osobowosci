@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSYCHE.OS - System 64 Typów Osobowości (Model Typologii Jungowskiej)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAWIGACJA GŁÓWNA -->
+  <nav class="app-nav">
+    <div class="brand-container">
+      <div class="brand-logo-icon">Ψ</div>
+      <div>
+        <span class="brand-name">PSYCHE.OS</span>
+        <span class="brand-badge">Typologia Jungowska 64 Typów v3.5</span>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-ghost btn-back-home" type="button">Ekran Startowy</button>
+    </div>
+  </nav>
+
+  <!-- GŁÓWNY KONTENER APLIKACJI -->
+  <main class="main-wrapper">
+
+    <!-- ================= EKRAN 1: START / WYBÓR WARIANTU ================= -->
+    <div class="screen-view active" id="screen-intro">
+      <header class="hero-header">
+        <div class="hero-pill">SYSTEM 64 TYPÓW OSOBOWOŚCI • MODEL TYPOLOGII JUNGOWSKIEJ</div>
+        <h1 class="hero-title">Wielowymiarowy Inwentarz Psychometryczny</h1>
+        <p class="hero-lead">
+          Zaawansowane narzędzie diagnostyczno-rozwojowe integrujące System 64 Typów Osobowości (oparty na paradygmacie typologii analitycznej Carla Gustava Junga z wymiarami Asertywny/Turbulentny oraz Kooperatywny/Autonomiczny), 8-funkcyjny model Cienia Johna Beebe'a, dynamikę Enneagramu ze skrzydłami, Model Wielkiej Piątki (OCEAN Costy & McCrae), 12 archetypów Carol Pearson oraz Matrycę 34 Talentów i Predyspozycji Zawodowych.
+        </p>
+      </header>
+
+      <!-- WYBÓR DWÓCH ŚCIEŻEK TESTU -->
+      <div class="track-selection-grid">
+        <!-- WARIANT 1: SZYBKI (50 PYTAŃ) -->
+        <div class="track-card">
+          <span class="track-badge-top badge-quick">Wariant 1</span>
+          <div class="track-content">
+            <h3>Test Podstawowy (Szybki)</h3>
+            <div class="track-meta-row">
+              <span class="track-meta-item">⏱ ~- minut</span>
+              <span class="track-meta-item">📊 50 pytań</span>
+            </div>
+            <p class="track-desc">
+              Skondensowany arkusz diagnostyczny o pełnej symetrii matematycznej, pozwalający na szybkie wyznaczenie typu osobowości, podstawowych tendencji Enneagramu oraz ogólnego profilu cech.
+            </p>
+            <ul class="track-features-list">
+              <li>Szybka orientacja w aparacie kognitywnym</li>
+              <li>Wstępne oszacowanie typu bazowego</li>
+              <li>Podstawowe dopasowanie postaci historycznych</li>
+            </ul>
+          </div>
+          <button class="btn-start-track btn-primary-purple" id="btn-track-quick" type="button">
+            Rozpocznij Test Szybki (50 Pytań) →
+          </button>
+        </div>
+
+        <!-- WARIANT 2: SZCZEGÓŁOWY (200 PYTAŃ) - PEŁNA PRECYZJA -->
+        <div class="track-card recommended">
+          <span class="track-badge-top badge-deep">Wariant 2 • Pełna Precyzja</span>
+          <div class="track-content">
+            <h3>Test Szczegółowy (200 Pytań)</h3>
+            <div class="track-meta-row">
+              <span class="track-meta-item">⏱ ~- minut</span>
+              <span class="track-meta-item">🔬 Dokładnie 200 pytań</span>
+            </div>
+            <p class="track-desc">
+              Maksymalnie pogłębiona, zrównoważona dekonstrukcja psychometryczna badająca subtelne fasetki cech, dynamikę Cienia Beebe'a, rozkład Matrycy 34 Talentów oraz wektorowe dopasowanie z bazy 220+ postaci.
+            </p>
+            <ul class="track-features-list">
+              <li>Pełny stos 8 funkcji Beebe'a (Ego + Cień)</li>
+              <li>Dokładne wykrywanie skrzydeł Enneagramu i triad</li>
+              <li>Fasety Big Five (OCEAN) i 12 archetypów Pearsona</li>
+              <li><strong>Funkcja pomijania pytań bez zniekształceń wag</strong></li>
+              <li>Matryca 34 Talentów i Predyspozycji Zawodowych w 4 domenach</li>
+            </ul>
+          </div>
+          <button class="btn-start-track btn-primary-cyan" id="btn-track-detailed" type="button">
+            Rozpocznij Test Szczegółowy (200 Pytań) →
+          </button>
+        </div>
+      </div>
+
+      <!-- SZYBKA WERYFIKACJA / DEMO -->
+      <div class="quick-test-section">
+        <div class="demo-title">⚡ Szybka Weryfikacja Wyników (Tryby Demo):</div>
+        <div class="demo-buttons-group">
+          <button class="btn-demo-pill" id="demo-intj-quick" type="button">Demo INTJ (Szybki 50Q)</button>
+          <button class="btn-demo-pill" id="demo-intj-200" type="button">Demo INTJ (Szczegółowy 200Q)</button>
+          <button class="btn-demo-pill" id="demo-enfp" type="button">Demo ENFP</button>
+          <button class="btn-demo-pill" id="demo-entj" type="button">Demo ENTJ</button>
+          <button class="btn-demo-pill" id="demo-random" type="button">Losowe Odpowiedzi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= EKRAN 2: PRZEBIEG KWESTIONARIUSZA ================= -->
+    <div class="screen-view" id="screen-quiz">
+      <div class="quiz-top-bar">
+        <span class="brand-badge" id="quiz-track-badge">Wariant Testu</span>
+        <div class="quiz-progress-info">
+          <div class="quiz-counter" id="quiz-counter">1 <span>/ 200</span></div>
+          <span class="brand-badge" id="quiz-skipped-counter" style="background: rgba(245,158,11,0.15); color: #f59e0b; border-color: rgba(245,158,11,0.3);">Pominięte: 0</span>
+        </div>
+        <button class="btn-ghost" id="btn-finish-early" type="button">Zakończ Wcześniej</button>
+      </div>
+
+      <div class="quiz-progress-bar-container">
+        <div class="quiz-progress-bar-fill" id="quiz-progress-fill"></div>
+      </div>
+
+      <!-- KARTA BIEŻĄCEGO PYTANIA -->
+      <div class="question-focus-card">
+        <span class="question-tag" id="question-number-tag">Pytanie 1 z 200</span>
+        <h2 class="question-text" id="question-text">Treść pytania psychometrycznego...</h2>
+
+        <!-- SKALA LIKERTA - (SYMETRIA: 1=-2, 2=-1, 3=0, 4=+1, 5=+2) -->
+        <div class="likert-scale-grid">
+          <button class="btn-likert" data-value="1" type="button">
+            <span class="likert-num">1</span>
+            <span class="likert-label">Zdecydowanie się nie zgadzam</span>
+          </button>
+          <button class="btn-likert" data-value="2" type="button">
+            <span class="likert-num">2</span>
+            <span class="likert-label">Raczej się nie zgadzam</span>
+          </button>
+          <button class="btn-likert" data-value="3" type="button">
+            <span class="likert-num">3</span>
+            <span class="likert-label">Neutralnie / Trudno ocenić</span>
+          </button>
+          <button class="btn-likert" data-value="4" type="button">
+            <span class="likert-num">4</span>
+            <span class="likert-label">Raczej się zgadzam</span>
+          </button>
+          <button class="btn-likert" data-value="5" type="button">
+            <span class="likert-num">5</span>
+            <span class="likert-label">Zdecydowanie się zgadzam</span>
+          </button>
+        </div>
+
+        <!-- PRZYCISK POMIŃ PYTANIE -->
+        <div class="skip-action-wrapper">
+          <button class="btn-skip-question" id="btn-skip-question" type="button" title="Pominięcie pytania wyklucza je z mianownika wag, zachowując bezwzględną proporcjonalność">
+            <span>⊘ Pomiń pytanie / Nie wiem</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- NAWIGACJA POPRZEDNIE / NASTĘPNE -->
+      <div class="quiz-nav-controls">
+        <button class="btn-nav" id="btn-prev-question" type="button">← Poprzednie</button>
+        <button class="btn-ghost btn-back-home" type="button">Anuluj i wróć</button>
+        <button class="btn-nav" id="btn-next-question" type="button">Następne →</button>
+      </div>
+    </div>
+
+    <!-- ================= EKRAN 3: WYNIKI ================= -->
+    <div class="screen-view" id="screen-results">
+      <header class="results-header-banner">
+        <span class="results-badge">Diagnoza Psychometryczna Zakończona</span>
+        <h1 class="results-title">Twoja Architektura Psychodynamiczna</h1>
+        <p class="sec-sublead">Poniżej przedstawiono podstawowy profil tożsamości kognitywnej.</p>
+      </header>
+
+      <!-- GÓRNA SEKCJA: FUNDAMENT KOGNITYWNY (ZAWSZE TYLKO 4 LITERY TYPU BAZOWEGO) -->
+      <div class="mbti-hero-card" id="mbti-preview-card">
+        <div class="mbti-hero-core-box">
+          <span class="mbti-core-badge">Rdzenny Typ Kognitywny</span>
+          <div class="mbti-big-code" id="res-mbti-code">INFP</div>
+          <div class="mbti-type-title" id="res-mbti-name">Pośrednik</div>
+          <div class="mbti-type-motto" id="res-mbti-title">„Idealistyczny Twórca”</div>
+          <div class="mbti-motto-quote" id="res-mbti-motto"></div>
+        </div>
+        <div class="mbti-hero-desc-box">
+          <h3 class="mbti-desc-heading">Fundament Kognitywno-Behawioralny</h3>
+          <p class="mbti-desc-text" id="res-mbti-desc">
+            Twój aparat kognitywny wykazuje silną preferencję dla tego typu bazowego.
+          </p>
+          <div class="mbti-teaser-card" id="mbti-locked-teaser">
+            <div class="mbti-teaser-title">
+              <span class="teaser-lock-icon">🔒</span> Pełna Analiza 64-Typowa i Profil Wektorowy są zablokowane
+            </div>
+            <p class="mbti-teaser-p">
+              Wykryto Twój rdzenny typ bazowy. Aby odsłonić <strong>pełny 6-literowy profil behawioralny</strong>, szczegółowy <strong>rozkład 6 osi cech</strong>, <strong>dopasowanie 2 postaci historycznych</strong>, <strong>8 funkcji Cienia Beebe'a</strong> oraz <strong>Matrycę 34 Talentów</strong>, skorzystaj z poniższego formularza i uzyskaj jednorazowy kod dostępu.
+            </p>
+            <a href="#password-gate-card" class="btn-jump-to-gate">Uzyskaj Kod Dostępu Poniżej ↓</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= BLOKADA JEDNORAZOWYM KODEM DOSTĘPU ================= -->
+      <div class="password-gate-card" id="password-gate-card">
+        <div class="gate-icon-wrap">🔒</div>
+        <h3 class="gate-title">Uzyskaj Jednorazowy Kod Dostępu do Pełnych Wyników</h3>
+        <p class="gate-desc">
+          Dostęp do rozszerzenia 64-typowego, dopasowanych postaci, architektury 8 funkcji Beebe'a, dynamiki Enneagramu, Wielkiej Piątki oraz Matrycy 34 Talentów wymaga autoryzacji jednorazowym kodem dostępu.
+        </p>
+
+        <!-- KROK 1: PROŚBA O JEDNORAZOWY KOD DO ADMINISTRATORA Z CHECKBOXEM RODO -->
+        <div class="gate-request-box" id="gate-request-box">
+          <div class="gate-box-title">Krok 1: Poproś administratora o jednorazowy kod dostępu</div>
+          <form class="gate-req-form" id="gate-req-form" onsubmit="return false;">
+            <div class="gate-input-group">
+              <input type="text" class="gate-input" id="req-user-name" placeholder="Twoje imię lub identyfikator" required autocomplete="name">
+              <input type="email" class="gate-input" id="req-user-email" placeholder="Twój adres e-mail zwrotny" required autocomplete="email">
+            </div>
+
+            <!-- WYMAGANA ZGODA RODO -->
+            <label class="rodo-checkbox-label" for="rodo-consent-checkbox">
+              <input type="checkbox" id="rodo-consent-checkbox" required>
+              <span class="rodo-text">
+                Wyrażam zgodę na przetwarzanie mojego adresu e-mail wyłącznie w celu wygenerowania i przesłania jednorazowego kodu dostępu do wyników testu (Administratorem danych jest właściciel serwisu, kontakt: <strong>margrab7@o2.pl</strong>).
+              </span>
+            </label>
+
+            <button class="btn-unlock" id="btn-request-code" type="button" disabled style="opacity: 0.5; cursor: not-allowed; margin-top: 12px;">
+              ✉️ Wyślij prośbę do administratora (margrab7@o2.pl)
+            </button>
+          </form>
+          <div class="gate-status-message" id="gate-req-status"></div>
+        </div>
+
+        <!-- KROK 2: WERYFIKACJA OTRZYMANEGO KODU -->
+        <div class="gate-verify-box" id="gate-verify-box">
+          <div class="gate-box-title">Krok 2: Wprowadź otrzymany kod jednorazowy</div>
+          <div class="gate-form" id="gate-locked-form">
+            <input type="text" class="gate-input" id="input-verify-code" placeholder="Wpisz 8-znakowy kod (np. X9K4-M2P8)" autocomplete="off" spellcheck="false">
+            <button class="btn-unlock" id="btn-verify-code" type="button">Odblokuj Pełne Wyniki</button>
+          </div>
+          <div class="gate-hint">Wpisz kod przekazany przez administratora, aby zweryfikować uprawnienia i uzyskać dostęp do pełnego profilu.</div>
+        </div>
+
+        <div class="gate-unlocked-state" id="gate-unlocked-state">
+          ✓ Klucz autoryzacyjny aktywny: Wszystkie moduły analityczne i raport PDF zostały pomyślnie odblokowane.
+        </div>
+      </div>
+
+      <!-- ================= KONTENER ZABLOKOWANY (POZOSTAJE PUSTY W DOM DO CZASU POPRAWNEJ AUTORYZACJI) ================= -->
+      <div class="locked-content-container is-locked" id="locked-content-container">
+
+        <!-- GŁÓWNA KARTA ODBLOKOWANA: PEŁNY PROFIL 64-TYPOWY (6 LITER + 2 DODATKOWE WYMIARY + 6 OSI) -->
+        <div class="results-section-card full-64type-card" id="full-64type-section">
+          <div class="full-64type-top-pill">
+            <span class="head-pill-pulse"></span>
+            PEŁNY PROFIL 64-TYPOWY • DEKONSTRUKCJA KOGNITYWNA
+          </div>
+          
+          <div class="full-64type-header-grid">
+            <div class="full-64type-code-panel">
+              <span class="full-64type-label">Zautoryzowany Pełny Kod 6-Literowy</span>
+              <div class="full-64type-big-code" id="res-mbti-6code">INFP-TC</div>
+              <div class="full-64type-name" id="res-mbti-6name">Pośrednik • Turbulentny Kooperatywny</div>
+            </div>
+            <div class="full-64type-dimensions-panel">
+              <h4 class="dimensions-panel-title">Dekonstrukcja Dodatkowych Wymiarów (Wymiar 5 & 6)</h4>
+              <div class="full-64type-dimensions-grid" id="res-dim-subtypes">
+                <!-- Wstrzykiwane przez JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- WYKRES 6 OSI PSYCHOMETRYCZNYCH -->
+          <div class="six-axes-wrapper">
+            <h3 class="six-axes-title">Rozkład 6 Osi Psychometrycznych (Wektor Tożsamości)</h3>
+            <div class="mbti-dichotomies-list" id="dicho-container">
+              <!-- Wstrzykiwane przez JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- SEKCJA DOPASOWANYCH POSTACI (POJAWIA SIĘ DOPIERO PO KODZIE) -->
+        <section class="celebrity-match-section" id="celeb-section-wrapper" style="display: none;">
+          <h2 class="sec-headline">🏛️ Dopasowane Postacie Historyczne i Współczesne (Baza 220+)</h2>
+          <p class="sec-sublead">Wektorowy algorytm podobieństwa wyselekcjonował z bazy 220+ znanych postaci 1 postać męską i 1 żeńską o najwyższej zgodności wielowymiarowej:</p>
+          
+          <div class="celeb-grid-pair">
+            <div class="celeb-card male-card" id="celeb-male-card"></div>
+            <div class="celeb-card female-card" id="celeb-female-card"></div>
+          </div>
+        </section>
+
+        <!-- 1. FUNKCJE KOGNITYWNE (BEEBE) -->
+        <div class="results-section-card">
+          <span class="section-head-pill">Model Psychodynamiczny</span>
+          <h2 class="section-head-title">1. Architektura 8 Funkcji Kognitywnych (John Beebe)</h2>
+          <p class="section-head-desc">
+            Hierarchia aparatu poznawczego podzielona na operacyjne Ego (Bohater, Rodzic, Dziecko, Anima) oraz nieświadomy Cień (Przeciwnik, Senex, Oszust, Demon).
+          </p>
+          <div class="beebe-two-col">
+            <div>
+              <h4 style="color: var(--color-cyan); font-size: 13.5px; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 1px;">Kompleks Ego (Świadomość)</h4>
+              <div id="beebe-ego-stack"></div>
+            </div>
+            <div>
+              <h4 style="color: var(--color-amber); font-size: 13.5px; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 1px;">Kompleks Cienia (Nieświadomość)</h4>
+              <div id="beebe-shadow-stack"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. ENNEAGRAM ZE SKRZYDŁAMI -->
+        <div class="results-section-card">
+          <span class="section-head-pill">Typologia Motywacyjna</span>
+          <h2 class="section-head-title">2. Enneagram Motywacji i Skrzydeł (Wings)</h2>
+          <p class="section-head-desc">
+            Podstawowy mechanizm obronny, rdzenny lęk, pragnienie oraz energetyczny rozkład wszystkich 9 typów osobowości.
+          </p>
+          <div style="display: flex; gap: 20px; align-items: center; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+            <div id="ennea-hero-core" style="text-align: center; min-width: 100px;"></div>
+            <div id="ennea-hero-info"></div>
+          </div>
+          <div class="ennea-score-grid" id="ennea-distribution-grid"></div>
+        </div>
+
+        <!-- 3. WIELKA PIĄTKA (BIG 5 / OCEAN) -->
+        <div class="results-section-card">
+          <span class="section-head-pill">Paradygmat Cech (Costa & McCrae)</span>
+          <h2 class="section-head-title">3. Model Wielkiej Piątki (Big Five / OCEAN)</h2>
+          <p class="section-head-desc">
+            Znormalizowane wyniki percentylowe (-%) wraz z fasetami psychologicznymi dla pięciu głównych osi cech osobowości.
+          </p>
+          <div id="ocean-cards-container"></div>
+        </div>
+
+        <!-- 4. DOMINUJĄCE ARCHETYPY -->
+        <div class="results-section-card">
+          <span class="section-head-pill">Archetypy Nieświadomości Zbiorowej</span>
+          <h2 class="section-head-title">4. Dominujące Archetypy Psychologiczne (Carol Pearson)</h2>
+          <p class="section-head-desc">
+            Mity przewodnie i struktury tożsamości organizujące życiową narrację, dążenia oraz adaptację do wyzwań.
+          </p>
+          <div id="archetypes-unlocked-container"></div>
+        </div>
+
+        <!-- 5. MATRYCA 34 TALENTÓW I PREDYSPOZYCJI ZAWODOWYCH -->
+        <div class="results-section-card">
+          <span class="section-head-pill" style="color: var(--color-purple);">Predyspozycje Zawodowe</span>
+          <h2 class="section-head-title">5. Matryca 34 Talentów i Predyspozycji Zawodowych</h2>
+          <p class="section-head-desc">
+            Uszeregowany ranking wszystkich 34 talentów predyspozycji zawodowych wyliczony algorytmicznie na podstawie korelacji cech Big 5, funkcji kognitywnych i profilu odpowiedzi. Podział na 4 domeny z wyodrębnieniem TOP 5.
+          </p>
+
+          <div class="gallup-matrix-container">
+            <!-- LEGENDA 4 DOMEN -->
+            <div class="gallup-domains-legend">
+              <div class="domain-legend-card domain-executing">
+                <strong>Wykonywanie (Executing)</strong>
+                <span>Materializacja idei w konkretne rezultaty i operacyjny porządek.</span>
+              </div>
+              <div class="domain-legend-card domain-influencing">
+                <strong>Wpływanie (Influencing)</strong>
+                <span>Przejmowanie inicjatywy, inspirowanie i przekonywanie.</span>
+              </div>
+              <div class="domain-legend-card domain-relationship">
+                <strong>Budowanie Relacji (Relationship)</strong>
+                <span>Spajanie grupy, empatia i budowanie głębokich więzi.</span>
+              </div>
+              <div class="domain-legend-card domain-strategic">
+                <strong>Myślenie Strategiczne (Strategic)</strong>
+                <span>Analiza danych, przewidywanie scenariuszy i innowacje koncepcyjne.</span>
+              </div>
+            </div>
+
+            <!-- TOP 5 DOMINUJĄCE TALENTY -->
+            <div>
+              <div class="gallup-tier-headline" style="color: var(--color-cyan);">⭐ TOP 5 DOMINUJĄCYCH TALENTÓW (Twój Rdzeń Potencjału)</div>
+              <div class="gallup-top5-grid" id="gallup-top5-container"></div>
+            </div>
+
+            <!-- TALENTY WSPIERAJĄCE - -->
+            <div>
+              <div class="gallup-tier-headline" style="color: var(--color-purple);">🔷 TALENTY WSPIERAJĄCE (Miejsca -)</div>
+              <div class="gallup-supporting-grid" id="gallup-supporting-container"></div>
+            </div>
+
+            <!-- POZOSTAŁE TALENTY - -->
+            <div class="gallup-remaining-table">
+              <div class="gallup-tier-headline" style="color: var(--text-secondary); font-size: 13.5px;">POZOSTAŁE TALENTY MATRYCY (Miejsca -)</div>
+              <div class="remaining-talents-grid" id="gallup-remaining-container"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PASEK AKCJI RAPORTU -->
+      <div class="report-action-bar">
+        <div class="action-bar-left">
+          <h4>Oficjalny Raport Kognitywno-Strukturalny</h4>
+          <p>Wygeneruj dokument gotowy do druku lub zapisu do formatu PDF zawierający ściśle 5 kluczowych sekcji.</p>
+        </div>
+        <div class="action-bar-buttons">
+          <button class="btn-report-download" id="btn-open-report-modal" type="button" disabled style="opacity: 0.5; cursor: not-allowed;">
+            <span>📄 Pobierz Pełny Raport (PDF / Drukuj)</span>
+          </button>
+          <button class="btn-ghost btn-back-home" type="button">Wypełnij Test Ponownie</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= STOPKA APLIKACJI Z NOTĄ PRAWNĄ I LINKAMI RODO ================= -->
+  <footer class="app-global-footer">
+    <div class="footer-links-row">
+      <a href="javascript:void(0)" class="footer-legal-link" id="btn-open-terms">Regulamin Serwisu</a>
+      <span class="sep">•</span>
+      <a href="javascript:void(0)" class="footer-legal-link" id="btn-open-privacy">Polityka Prywatności i RODO</a>
+      <span class="sep">•</span>
+      <span>Kontakt: <strong>margrab7@o2.pl</strong></span>
+    </div>
+    <div class="footer-disclaimer-box">
+      <strong>Nota prawna (Disclaimer):</strong> Narzędzie ma charakter edukacyjny, rozwojowy i rozrywkowy (self-discovery). Uzyskane wyniki nie stanowią diagnozy psychologicznej, psychiatrycznej ani medycznej w rozumieniu przepisów prawa. System nie jest powiązany ani certyfikowany przez The Myers-Briggs Company ani Gallup, Inc. Wszelkie prawa zastrzeżone.
+    </div>
+  </footer>
+
+  <!-- ================= MODAL: REGULAMIN SERWISU ================= -->
+  <div class="modal-overlay" id="modal-terms-overlay">
+    <div class="modal-content-box legal-modal-box">
+      <div class="modal-top-bar">
+        <div style="font-weight: 800; color: #fff; font-size: 16px;">Regulamin Serwisu PSYCHE.OS</div>
+        <button class="btn-ghost" id="btn-close-terms" type="button">✕</button>
+      </div>
+      <div class="modal-body-scroll legal-text-content">
+        <h3>1. Postanowienia Ogólne</h3>
+        <p>Serwis PSYCHE.OS jest autonomiczną platformą psychometryczno-edukacyjną działającą w celach samorozwojowych i badawczych. Korzystanie z serwisu oznacza akceptację niniejszego Regulaminu.</p>
+        
+        <h3>2. Charakter Narzędzia i Wyłączenie Odpowiedzialności Medycznej</h3>
+        <p>Prezentowane wyniki, opisy i interpretacje typologiczne mają charakter wyłącznie edukacyjny i samopoznawczy (self-discovery). Nie stanowią one porady psychologicznej, diagnozy klinicznej, orzeczenia lekarskiego ani świadczenia zdrowotnego w rozumieniu ustawy o działalności leczniczej. Użytkownik podejmuje wszelkie decyzje życiowe i zawodowe na własną odpowiedzialność.</p>
+        
+        <h3>3. Dostęp i Jednorazowe Kody Autoryzacyjne</h3>
+        <p>Wstępny wynik (4-literowy kod bazowy) jest dostępny bezpłatnie bezpośrednio po ukończeniu kwestionariusza. Dostęp do pełnego raportu, rozszerzenia 64-typowego, 8 funkcji Cienia Beebe'a oraz Matrycy 34 Talentów wymaga wprowadzenia jednorazowego kodu dostępu, przekazywanego przez administratora na podany adres e-mail. Kod autoryzacyjny ma charakter jednorazowy i ulega automatycznemu unieważnieniu po pomyślnej weryfikacji.</p>
+        
+        <h3>4. Prawa Własności Intelektualnej</h3>
+        <p>Architektura oprogramowania, algorytmy obliczeniowe oraz autorskie opracowania tekstowe podlegają ochronie prawa autorskiego. Serwis korzysta z publicznie dostępnych modeli akademickich (C.G. Jung, Costa & McCrae, J. Beebe, C. Pearson). Serwis nie jest powiązany, sponsorowany ani certyfikowany przez The Myers-Briggs Company ani Gallup, Inc.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL: POLITYKA PRYWATNOŚCI I RODO ================= -->
+  <div class="modal-overlay" id="modal-privacy-overlay">
+    <div class="modal-content-box legal-modal-box">
+      <div class="modal-top-bar">
+        <div style="font-weight: 800; color: #fff; font-size: 16px;">Polityka Prywatności i Ochrony Danych (RODO)</div>
+        <button class="btn-ghost" id="btn-close-privacy" type="button">✕</button>
+      </div>
+      <div class="modal-body-scroll legal-text-content">
+        <h3>1. Administrator Danych Osobowych</h3>
+        <p>Administratorem danych osobowych przetwarzanych w ramach serwisu jest właściciel platformy PSYCHE.OS. Kontakt w sprawach związanych z danymi: <strong>margrab7@o2.pl</strong>.</p>
+        
+        <h3>2. Zakres i Cel Przetwarzania Danych</h3>
+        <p>Serwis przetwarza wyłącznie dane dobrowolnie podane przez użytkownika w formularzu prośby o kod autoryzacyjny: imię/identyfikator oraz adres poczty elektronicznej (e-mail). Dane te są przetwarzane wyłącznie w celu wygenerowania i odesłania jednorazowego kodu dostępu do pełnego raportu psychometrycznego (art. 6 ust. 1 lit. a RODO).</p>
+        
+        <h3>3. Brak Przekazywania Podmiotom Trzecim i Brak Profilowania Komercyjnego</h3>
+        <p>Adresy e-mail użytkowników nie są sprzedawane, udostępniane podmiotom trzecim ani wykorzystywane do wysyłki niezamówionych materiałów marketingowych czy newsletterów. Serwis działa w architekturze offline/standalone, nie korzysta z komercyjnych trackerów reklamowych.</p>
+        
+        <h3>4. Prawa Użytkownika</h3>
+        <p>Użytkownikowi przysługuje prawo dostępu do swoich danych, ich sprostowania, usunięcia („prawo do bycia zapomnianym”) oraz cofnięcia zgody w dowolnym momencie poprzez wysłanie wiadomości na adres: <strong>margrab7@o2.pl</strong>.</p>
+        
+        <h3>5. Bezpieczeństwo Kryptograficzne</h3>
+        <p>Kody autoryzacyjne w przeglądarce użytkownika są przechowywane wyłącznie w postaci jednokierunkowych skrótów kryptograficznych (SHA-256), a po wykorzystaniu są natychmiastowo i trwale usuwane z pamięci sesji.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MODAL WYŚWIETLANIA RAPORTU (ŚCIŚLE 5 SEKCJI) ================= -->
+  <div class="modal-overlay" id="report-modal-overlay">
+    <div class="modal-content-box">
+      <div class="modal-top-bar">
+        <div style="font-weight: 800; color: #fff; font-size: 16px;">
+          Podgląd Raportu Diagnostycznego (Ściśle 5 Sekcji)
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn-report-download" id="btn-print-modal-report" type="button" style="padding: 6px 14px; font-size: 12.5px;">
+            🖨️ Drukuj / Zapisz do PDF
+          </button>
+          <button class="btn-ghost" id="btn-download-modal-html" type="button" style="padding: 6px 14px; font-size: 12.5px;">
+            💾 Pobierz Plik HTML
+          </button>
+          <button class="btn-ghost" id="btn-close-report-modal" type="button" style="padding: 6px 12px; font-size: 14px;">✕</button>
+        </div>
+      </div>
+      <div class="modal-body-scroll" id="report-modal-scroll-content">
+        <!-- Wypełniane przez REPORT_MODULE -->
+      </div>
+    </div>
+  </div>
+
+  <!-- UKRYTY KONTENER DO BEZPOŚREDNIEGO DRUKOWANIA -->
+  <div id="report-print-container"></div>
+
+  <!-- MODUŁY SKRYPTÓW JS -->
+  <script src="js/gallup.js"></script>
+  <script src="js/celebrities.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/report.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
