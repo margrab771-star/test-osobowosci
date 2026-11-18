@@ -2,13 +2,14 @@
  * PSYCHE.OS STANDALONE - BAZA PYTAŃ DIAGNOSTYCZNYCH (64 TYPY)
  * System 64 Typów Osobowości (Model Typologii Jungowskiej)
  * Pełna matematyczna symetria dla 6 osi: E/I, N/S, T/F, J/P, A/T, C/S.
- * Dokładnie 200 unikalnych pytań (Test Szczegółowy) oraz 50 pytań (Test Szybki).
+ * Dokładnie 200 unikalnych, głębokich pytań sytuacyjno-behawioralnych (Test Szczegółowy)
+ * oraz 50 pytań (Test Szybki). Wszystkie pytania badają realne scenariusze psychologiczne.
  */
 
 window.QUESTIONS_DETAILED_200 = [
   {
     "id": 1,
-    "text": "Czerpię energię z dynamicznych interakcji w dużych grupach ludzi i łatwo nawiązuję kontakt z nieznajomymi.",
+    "text": "Gdy wchodzę do sali pełnej nieznajomych na konferencji lub bankiecie, odruchowo szukam grupy, by zainicjować dynamiczną rozmowę i przełamać lody.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -33,7 +34,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 2,
-    "text": "W nowych sytuacjach najpierw intuicyjnie syntetyzuję ukryte trendy i dalekosiężne prawdopodobieństwa przyszłości.",
+    "text": "Analizując raport branżowy, natychmiast ignoruję bieżące statystyki, by wyłuskać niewidoczny jeszcze trend, który zmieni rynek za 5 lat.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -58,7 +59,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 3,
-    "text": "Podejmując kluczowe decyzje, kieruję się chłodną, bezstronną analizą logiczną i rachunkiem zysków oraz strat.",
+    "text": "Gdy przyjaciel popełnia ewidentny błąd logiczny w swoim planie, przedstawiam mu bezlitosną analizę faktów, nawet jeśli wiem, że sprawi mu to przykrość.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -83,7 +84,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 4,
-    "text": "Mój dzień musi mieć klarowną strukturę; najlepiej funkcjonuję według zaplanowanego harmonogramu.",
+    "text": "Mój harmonogram dnia ma klarowną hierarchię priorytetów – pracuję najefektywniej, gdy wiem dokładnie, co i w jakiej kolejności mam zrealizować.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -108,7 +109,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 5,
-    "text": "Rzadko odczuwam paraliżujący lęk przed porażką - wierzę w swoje kompetencje i zdolność poradzenia sobie z kryzysem.",
+    "text": "Nawet gdy popełnię spektakularny błąd na oczach całego zarządu, nie biczuję się w myślach, lecz traktuję to jako lekcję i natychmiast idę dalej.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -133,7 +134,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 6,
-    "text": "Wierzę, że największe dzieła powstają w drodze synergii zespołowej, otwartego dialogu i dzielenia się zasobami.",
+    "text": "Sukces smakuje dla mnie w pełni tylko wtedy, gdy mogę dzielić go z zespołem i wspólnie celebrować owoce zespołowego wysiłku.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -158,7 +159,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 7,
-    "text": "Wystąpienia publiczne i możliwość porywania audytorium swoją wizją dodają mi potężnego zastrzyku sił witalnych.",
+    "text": "Prowadzenie dynamicznej prezentacji przed audytorium i możliwość porywania ludzi swoją wizją dodają mi potężnego zastrzyku sił witalnych.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -183,7 +184,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 8,
-    "text": "Fascynują mnie abstrakcyjne koncepcje filozoficzne, metafory i wielopoziomowe teorie naukowe.",
+    "text": "Fascynują mnie abstrakcyjne dylematy epistemologiczne, teorie fizyki kwantowej oraz metaforyczne modele wyjaśniające naturę rzeczywistości.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -208,7 +209,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 9,
-    "text": "Potrafię całkowicie odciąć emocje i spojrzeć na problem z perspektywy obiektywnego obserwatora.",
+    "text": "W sytuacji silnego kryzysu potrafię całkowicie wyciszyć emocje i podjąć racjonalną decyzję z perspektywy chłodnego, bezstronnego chirurga.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -233,7 +234,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 10,
-    "text": "Nie znoszę odkładania spraw na później i zawieszonych, niedomkniętych kwestii.",
+    "text": "Gdy mam przed sobą ważny projekt, dzielę go na etapy i domykam kluczowe zadania z dużym wyprzedzeniem, by uniknąć paniki przed deadlinem.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -258,7 +259,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 11,
-    "text": "Po popełnieniu błędu szybko wyciągam wnioski i idę dalej, nie rozpamiętując porażki dniami i nocami.",
+    "text": "Zimna krew w momentach skrajnego chaosu lub paniki otoczenia przychodzi mi naturalnie – nie pozwalam, by strach paraliżował mój osąd.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -283,7 +284,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 12,
-    "text": "Gdy odnoszę sukces, w pierwszej kolejności podkreślam zasługi całego zespołu i osób wspierających.",
+    "text": "Wolę wypracować mądry kompromis, z którego każda strona wyjdzie z podniesioną głową, niż przeforsować własną wizję siłą kosztem rozbicia grupy.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -308,7 +309,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 13,
-    "text": "Wolę przegadywać swoje pomysły na głos z zespołem, niż przetwarzać je w samotności.",
+    "text": "Gdy utknę w martwym punkcie projektu, wolę natychmiast zwołać burzę mózgów i 'zderzać' idee w rozmowie, niż ślęczeć samemu nad dokumentacją.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -333,7 +334,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 14,
-    "text": "Czerpię radość z dostrzegania nieoczywistych powiązań między z pozoru odległymi od siebie dziedzinami wiedzy.",
+    "text": "Czerpię ogromną frajdę z łączenia z pozoru odległych od siebie dziedzin – np. biologii ewolucyjnej z architekturą oprogramowania czy sztuką.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -358,7 +359,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 15,
-    "text": "Uważam, że prawda i uczciwość merytoryczna są ważniejsze niż chronienie czyichś chwilowych uczuć.",
+    "text": "Uważam, że bezkompromisowa prawda merytoryczna i uczciwość intelektualna stoją wyżej niż ochrona czyjegoś chwilowego komfortu psychicznego.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -383,7 +384,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 16,
-    "text": "Zawsze dotrzymuję ustalonych terminów (deadlines) i wymagam tego samego od współpracowników.",
+    "text": "Niedotrzymanie zobowiązania lub spóźnienie ze strony współpracownika traktuję jako poważne naruszenie zaufania i brak szacunku dla mojego czasu.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -408,7 +409,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 17,
-    "text": "Zachowuję wewnętrzny spokój i opanowanie nawet w sytuacjach skrajnego chaosu i stresu.",
+    "text": "Krytyka ze strony osób, których autorytetu merytorycznego nie cenię, spływa po mnie bez śladu i nie narusza mojego poczucia wartości.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -433,7 +434,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 18,
-    "text": "Chętnie ustępuję z własnych preferencji, jeśli służy to większemu dobru wspólnoty i porozumieniu.",
+    "text": "Gdy kolega z zespołu ma problem z zadaniem, bez wahania odkładam na bok swoje obowiązki, by wesprzeć go radą i wspólnym działaniem.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -458,7 +459,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 19,
-    "text": "Naturalnie przejmuję rolę inicjatora rozmów i animatora życia towarzyskiego podczas spotkań.",
+    "text": "W trakcie spotkań towarzyskich naturalnie przejmuję rolę gospodarza rozmowy, dbając o to, by dyskusja tętniła energią i nikt nie czuł się pominięty.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -483,7 +484,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 20,
-    "text": "O wiele bardziej interesuje mnie to, co 'mogłoby być', niż to, co istnieje tu i teraz w sposób materialny.",
+    "text": "O wiele bardziej pociąga mnie projektowanie tego, co mogłoby powstać w przyszłości, niż żmudne zarządzanie tym, co już istnieje w świecie materialnym.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -508,7 +509,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 21,
-    "text": "Gdy napotykam błąd lub nielogiczność, natychmiast to punktuję, dążąc do bezwzględnej spójności zasad.",
+    "text": "Gdy napotykam lukę logiczną lub niespójność w argumentacji rozmówcy, odruchowo ją dekonstruuję, dążąc do definicyjnej precyzji.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -533,7 +534,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 22,
-    "text": "Lubię mieć pod kontrolą bieg wydarzeń i zawczasu przygotowane plany awaryjne (Plan B i C).",
+    "text": "Przed wyruszeniem w daleką podróż mam precyzyjnie zarezerwowane noclegi, zaplanowaną trasę awaryjną i spakowaną apteczkę.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -558,7 +559,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 23,
-    "text": "Jestem pewny swoich racji i nie potrzebuję ciągłego potwierdzania swojej wartości przez otoczenie.",
+    "text": "Wierzę głęboko we własną sprawczość – cokolwiek przyniesie los, znajdę sposób, by zaadaptować się i wyjść z opresji obronną ręką.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -583,7 +584,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 24,
-    "text": "Zawsze gram w otwarte karty i buduję sojusze oparte na wzajemnym zaufaniu i lojalności.",
+    "text": "Wierzę w radykalną transparentność i dzielenie się wiedzą – pilnowanie własnego poletka i silosy informacyjne uważam za plagę organizacji.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -608,7 +609,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 25,
-    "text": "Długie okresy izolacji i ciszy szybko wywołują u mnie poczucie znużenia i spadek motywacji.",
+    "text": "Dłuższy czas spędzony w całkowitej izolacji od ludzi wywołuje u mnie spadek nastroju, znużenie i potrzebę natychmiastowego wyjścia do świata.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -633,7 +634,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 26,
-    "text": "Moje myślenie ma charakter skokowy - często dochodzę do wniosków dzięki nagłym, wewnętrznym wglądom (insight).",
+    "text": "Moje myślenie ma charakter nieliniowy – kluczowe rozwiązania problemów pojawiają się często jako nagłe, całościowe błyski intuicji (insight).",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -658,7 +659,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 27,
-    "text": "W relacjach zawodowych cenię przede wszystkim kompetencje, profesjonalizm i rzetelne dowożenie rezultatów.",
+    "text": "Współpracowników oceniam wyłącznie przez pryzmat ich mierzalnych kompetencji, rzetelności i dowożonych rezultatów, a nie osobistej sympatii.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -683,7 +684,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 28,
-    "text": "Uporządkowana przestrzeń wokół mnie przekłada się bezpośrednio na spokój i klarowność mojego myślenia.",
+    "text": "Nie znoszę zawieszonych w próżni, niedomkniętych spraw – odczuwam fizyczną ulgę, gdy mogę ostatecznie odhaczyć zadanie z listy.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -708,7 +709,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 29,
-    "text": "Krytykę ze strony innych traktuję czysto informacyjnie, bez poczucia osobistego zranienia.",
+    "text": "Rzadko odczuwam syndrom oszusta – mam adekwatną, ugruntowaną świadomość własnych talentów i unikalnego wkładu w sukces.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -733,7 +734,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 30,
-    "text": "Największą radość przynosi mi wspólne świętowanie triumfów w gronie oddanych partnerów.",
+    "text": "W podejmowaniu decyzji dbam o wysłuchanie każdego głosu, wierząc, że nawet najcichszy członek zespołu może wnieść kluczową perspektywę.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -758,7 +759,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 31,
-    "text": "Szybko i bez wahania dzielę się swoimi pierwszymi przemyśleniami z otoczeniem.",
+    "text": "Moje myśli krystalizują się najszybciej w trakcie mówienia – dzielę się pierwszymi hipotezami na bieżąco, testując ich rezonans na słuchaczach.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -783,7 +784,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 32,
-    "text": "Gdy planuję projekt, skupiam się na nadrzędnej wizji i architekturze systemu, delegując detaliczne procedury.",
+    "text": "Planując przedsięwzięcie, skupiam się na architekturze całego ekosystemu i nadrzędnej filozofii, pozostawiając detaliczne procedury wykonawcom.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -808,7 +809,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 33,
-    "text": "Spory rozwiązuję za pomocą logicznych argumentów i faktów, a nie odwoływania się do emocji czy litości.",
+    "text": "Spory w zespole rozwiązuję w oparciu o twarde dowody, dane liczbowe i logikę systemową, a nie odwoływanie się do empatii czy sentymentów.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -833,7 +834,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 34,
-    "text": "Cenię dyscyplinę, punktualność i systematyczne odhaczanie zrealizowanych kamieni milowych.",
+    "text": "W sferze pracy i finansów wymagam żelaznego porządku: zorganizowanych folderów, precyzyjnych umów i przejrzystych rozliczeń.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -858,7 +859,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 35,
-    "text": "Śpię spokojnie przed ważnymi wyzwaniami, ufając, że dam z siebie to, co najlepsze.",
+    "text": "Konfrontacja z trudnym, dominującym rozmówcą nie wywołuje u mnie lęku – patrzę mu w oczy i spokojnie bronię swojego stanowiska.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -883,7 +884,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 36,
-    "text": "Uważam, że konkurencja niszczy relacje - optymalnym modelem rozwoju jest kooperacja (win-win).",
+    "text": "Budowanie atmosfery zaufania, empatii i wzajemnego szacunku uważam za najważniejszą rolę lidera w zespole.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -908,7 +909,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 37,
-    "text": "Najlepiej odpoczywam w ruchu, w tętniącym życiem otoczeniu i wśród aktywnych ludzi.",
+    "text": "Najlepiej regeneruję siły w ruchu, w tętniącym życiem otoczeniu miejskim i w towarzystwie inspirujących, aktywnych znajomych.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -933,7 +934,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 38,
-    "text": "Często rozmyślam o fundamentalnych prawach rządzących rzeczywistością i ewolucją ludzkiej świadomości.",
+    "text": "Często rozmyślam o fundamentalnych prawach rządzących historią cywilizacji, mechanizmach władzy i ewolucji ludzkiej świadomości.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -958,7 +959,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 39,
-    "text": "Potrafię podjąć trudną, bolesną decyzję personalną, jeśli wymaga tego dobro całego przedsięwzięcia.",
+    "text": "Potrafię podjąć bolesną decyzję o zakończeniu nierentownego projektu lub zwolnieniu pracownika, jeśli wymaga tego przetrwanie całej organizacji.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -983,7 +984,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 40,
-    "text": "Zanim przystąpię do działania, muszę mieć sprecyzowany cel końcowy i jasną mapę drogową.",
+    "text": "Podejmuję decyzje szybko i definitywnie, woląc zaakceptować ryzyko błędu niż tkwić w paraliżującym zawieszeniu decyzyjnym.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1008,7 +1009,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 41,
-    "text": "Nie miewam napadów syndromu oszusta (impostor syndrome) - wiem, na co mnie stać.",
+    "text": "Po ciężkiej porażce zawodowej regeneruję się błyskawicznie, nie tracąc optymizmu ani wiary w kolejne przedsięwzięcia.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1033,7 +1034,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 42,
-    "text": "Chętnie dzielę się swoją wiedzą i kontaktami, nie ukrywając informacji dla własnej przewagi.",
+    "text": "Chętnie i szczerze doceniam sukcesy innych na forum publicznym, nie odczuwając przy tym cienia zawiści czy zazdrości.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1058,7 +1059,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 43,
-    "text": "W nowym środowisku błyskawicznie adaptuję się do otoczenia i staję się widocznym uczestnikiem grupy.",
+    "text": "W nowym zespole lub nieznanym środowisku błyskawicznie adaptuję się do reguł gry i staję się wyraźną, aktywną postacią.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1083,7 +1084,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 44,
-    "text": "Wolę rewolucyjne, bezprecedensowe rozwiązania niż stopniowe ulepszanie starych schematów.",
+    "text": "Wolę podjąć ryzyko wdrożenia rewolucyjnej, niesprawdzonej dotąd innowacji, niż iść bezpieczną ścieżką stopniowych, kosmetycznych usprawnień.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -1108,7 +1109,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 45,
-    "text": "Moja ocena sytuacji nie zależy od moich osobistych sympatii do osób biorących w niej udział.",
+    "text": "Moja ocena merytoryczna pomysłu jest w 100% niezależna od tego, czy prywatnie lubię osobę, która ten pomysł zgłosiła.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -1133,7 +1134,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 46,
-    "text": "Zdecydowanie wolę podjąć decyzję szybko i zamknąć temat, niż w nieskończoność rozważać alternatywy.",
+    "text": "W zespole natychmiast wprowadzam czytelny podział ról, checklisty weryfikacyjne oraz twarde terminy rozliczenia odpowiedzialności.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1158,7 +1159,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 47,
-    "text": "Akceptuję siebie wraz ze swoimi mocnymi stronami i ograniczeniami, bez ciągłego poczucia winy.",
+    "text": "Nie potrzebuję nieustannych pochwał i zapewnień z zewnątrz, by wiedzieć, że wykonałem doskonałą, wartościową pracę.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1183,7 +1184,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 48,
-    "text": "W sytuacjach spornych szukam kompromisu integrującego potrzeby wszystkich zainteresowanych stron.",
+    "text": "W konflikcie interesów zawsze szukam rozwiązań typu Win-Win, wierząc, że dobro wspólnoty przewyższa partykularne korzyści jednostki.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1208,7 +1209,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 49,
-    "text": "Często myślę na głos, dochodząc do najlepszych wniosków w trakcie bezpośredniego dialogu.",
+    "text": "Milczenie i brak natychmiastowej informacji zwrotnej ze strony współpracowników odbieram jako zastój – potrzebuję żywego dialogu, by utrzymać tempo.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1233,7 +1234,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 50,
-    "text": "Często wybiegam myślami w odległą przyszłość, zastanawiając się nad długofalowymi konsekwencjami zdarzeń.",
+    "text": "Podejmując strategiczną decyzję, projektuję w wyobraźni wieloletnie drzewo konsekwencji drugiego i trzeciego rzędu dla całego systemu.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -1258,7 +1259,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 51,
-    "text": "Naturalnie dostrzegam wady logiczne w przedstawianych teoriach i konstrukcjach myślowych.",
+    "text": "Instynktownie dostrzegam wąskie gardła, nieefektywności procesowe oraz błędy w architekturze rozwiązań, zanim zauważą je inni.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -1283,7 +1284,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 52,
-    "text": "Planuję swoje wydatki, podróże i zadania z dużym wyprzedzeniem czasowym.",
+    "text": "Niezapowiedziane wizyty lub nagłe wywrócenie agendy spotkania wytrącają mnie z równowagi i budzą natychmiastową irytację.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1308,7 +1309,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 53,
-    "text": "Trudne rozmowy i konfrontacje nie wywołują u mnie długotrwałego rozstroju nerwowego.",
+    "text": "W sytuacjach wysokiego ryzyka finansowego lub presji publicznej potrafię spokojnie zasnąć, odcinając gonitwę myśli.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1333,7 +1334,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 54,
-    "text": "Najlepiej pracuje mi się w atmosferze partnerskiego współdziałania, gdzie każdy czuje się częścią całości.",
+    "text": "W relacjach stawiam na lojalność i długoterminowe przymierza – dotrzymuję sojuszy nawet wtedy, gdy przestają być doraźnie opłacalne.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1358,7 +1359,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 55,
-    "text": "Łatwo i naturalnie wyrażam swoje emocje oraz entuzjazm poprzez ekspresyjną mowę ciała i gestykulację.",
+    "text": "Moje emocje i entuzjazm są dla otoczenia jak otwarta księga – naturalnie gestykuluję, moduluję głos i otwarcie manifestuję swoje zaangażowanie.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1383,7 +1384,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 56,
-    "text": "Interpretuję zjawiska poprzez pryzmat ukrytych znaczeń, symboli i niewidocznych na pierwszy rzut oka intencji.",
+    "text": "Podświadomie interpretuję zachowania ludzi jako przejawy ukrytych archetypów i motywów, nie zatrzymując się na ich dosłownych deklaracjach.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -1408,7 +1409,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 57,
-    "text": "Uważam, że standardy i reguły powinny obowiązywać wszystkich jednakowo, bez taryfy ulgowej.",
+    "text": "Uważam, że sprawiedliwość to równe i bezwzględne stosowanie tych samych surowych reguł wobec wszystkich, bez robienia wyjątków po znajomości.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -1433,7 +1434,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 58,
-    "text": "Niedotrzymanie słowa lub spóźnienie uważam za przejaw braku szacunku dla mojego czasu.",
+    "text": "Standardy i procedury operacyjne traktuję jako fundament bezpieczeństwa – chaos interpretacyjny uznaję za największego wroga jakości.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1458,7 +1459,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 59,
-    "text": "Potrafię z uśmiechem zdystansować się do drobnych potknięć i żartować z własnych niedoskonałości.",
+    "text": "Moje poczucie tożsamości jest stabilne i zakorzenione – nie zmieniam swoich przekonań pod wpływem chwilowej mody czy presji otoczenia.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1483,7 +1484,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 60,
-    "text": "Zamiast rywalizować o palmę pierwszeństwa, wolę wzmacniać kompetencje pozostałych członków grupy.",
+    "text": "Z łatwością oddaję pole i deleguję zaufanie innym, nie mając obsesyjnej potrzeby kontrolowania każdego kroku współpracowników.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1508,7 +1509,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 61,
-    "text": "Chętnie uczestniczę w wydarzeniach networkingowych, konferencjach i wieloosobowych burzach mózgów.",
+    "text": "Chętnie i bez oporów biorę udział w dużych wydarzeniach networkingowych, z łatwością nawiązując kontakty biznesowe z wpływowymi osobami.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1533,7 +1534,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 62,
-    "text": "Gdy czytam książkę, bardziej fascynują mnie idee i metafory autora niż suchy opis faktograficzny.",
+    "text": "Czytając literaturę lub esej, szukam przede wszystkim głębokiej metafory i filozoficznej tezy autora, a nie kronikarskiego zapisu faktów.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -1558,7 +1559,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 63,
-    "text": "W dyskusji dążę do odkrycia obiektywnej prawdy, a nie do zadowolenia rozmówcy za wszelką cenę.",
+    "text": "Gdy ktoś próbuje wpłynąć na moją decyzję za pomocą szantażu emocjonalnego lub łez, zamykam się w racjonalnej rezerwie i żądam faktów.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -1583,7 +1584,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 64,
-    "text": "Czuję satysfakcję, gdy duży projekt jest podzielony na fazy, checklisty i precyzyjne harmonogramy.",
+    "text": "Gdy wyznaczę sobie cel, konsekwentnie realizuję go krok po kroku, ignorując poboczne pokusy i chwilowe rozproszenia.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1608,7 +1609,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 65,
-    "text": "Nawet pod silną presją czasu moje tętno i myśli pozostają stabilne i opanowane.",
+    "text": "Gdy ktoś próbuje mnie onieśmielić swoim statusem społecznym lub majątkiem, reaguję spokojną asertywnością bez cienia kompleksów.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1633,7 +1634,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 66,
-    "text": "Dobre relacje z ludźmi są dla mnie fundamentem każdego trwałego przedsięwzięcia.",
+    "text": "Poczucie przynależności do zgranej, oddanej wspólnoty daje mi potężny sens życia i napędza do największych poświęceń.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1658,7 +1659,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 67,
-    "text": "Czuję się naładowany energią, gdy wokół mnie dużo się dzieje i stale obracam się w kręgu ludzi.",
+    "text": "W sytuacji nagłego kryzysu lub wypadku naturalnie i bez paraliżu przejmuję dowodzenie, głośno wydając dyspozycje otaczającym mnie ludziom.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1683,7 +1684,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 68,
-    "text": "Lubię zadawać pytania fundamentalne typu 'dlaczego?', podważając dotychczasowe paradygmaty myślenia.",
+    "text": "Uwielbiam kwestionować dogmaty uznawane w branży za oczywiste – zadawanie prowokacyjnego pytania 'a co, jeśli jest dokładnie na odwrót?' to mój żywioł.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -1708,7 +1709,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 69,
-    "text": "Zamiast pocieszać kogoś frazesami, wolę pomóc mu znaleźć racjonalne rozwiązanie jego problemu.",
+    "text": "W dyskusjach akademickich lub biznesowych bardziej cenię bezlitosnego sparingpartnera intelektualnego niż kogoś, kto potakuje z uprzejmości.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -1733,7 +1734,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 70,
-    "text": "Przed pójściem spać lubię wiedzieć dokładnie, jak będzie wyglądał mój następny dzień roboczy.",
+    "text": "Uważam, że wolność i spokój psychiczny są owocem dyscypliny, zorganizowanego czasu i panowania nad własnymi nawykami.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1758,7 +1759,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 71,
-    "text": "Nie tracę wiary w siebie, gdy projekt napotyka niespodziewane trudności lub krytykę recenzentów.",
+    "text": "Nie zadręczam się przeszłością – to, co minęło, traktuję jako zamknięty bilans doświadczeń i skupiam się wyłącznie na teraźniejszości.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1783,7 +1784,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 72,
-    "text": "Potrafię odłożyć osobiste ambicje na bok, jeśli projekt wymaga pełnej jedności zespołu.",
+    "text": "W trudnych chwilach kryzysu instynktownie łączę ludzi, budując mosty porozumienia i gasząc pożary animozji.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1808,7 +1809,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 73,
-    "text": "Z łatwością przełamuję lody w nowym towarzystwie, zadając pytania i okazując otwartość.",
+    "text": "Gdy wyczuwam w pokoju sztywne napięcie, instynktownie rozładowuję je trafnym żartem lub bezpośrednim, ciepłym pytaniem do grupy.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1833,7 +1834,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 74,
-    "text": "Moje pomysły są często tak nowatorskie, że otoczenie potrzebuje czasu, aby zrozumieć ich sedno.",
+    "text": "Moje koncepcje bywają tak nowatorskie i wielowymiarowe, że współpracownicy potrzebują dłuższego czasu, by przyswoić ich właściwe sedno.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -1858,7 +1859,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 75,
-    "text": "Krytyka merytoryczna jest dla mnie naturalnym narzędziem doskonalenia, a nie powodem do obrazy.",
+    "text": "Podczas krytyki skupiam się wyłącznie na mechanice problemu i faktach, nie personalizując zarzutów i oczekując tego samego od innych.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -1883,7 +1884,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 76,
-    "text": "Wolę metodyczną, przewidywalną pracę według wypracowanych procedur niż improwizację w ostatniej chwili.",
+    "text": "Zawsze dotrzymuję danego słowa i tego samego bezwzględnie wymagam od każdego, z kim wchodzę w relacje biznesowe lub osobiste.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -1908,7 +1909,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 77,
-    "text": "Mam głębokie poczucie, że kontroluję bieg swojego życia i poradzę sobie z każdym losem.",
+    "text": "Nie odczuwam lęku przed odrzuceniem – wolę być nielubiany za to, kim naprawdę jestem, niż podziwiany za noszenie cudzej maski.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -1933,7 +1934,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 78,
-    "text": "Chętnie angażuję się w inicjatywy społeczne, wolontariat i pomoc wzajemną.",
+    "text": "Zamiast rywalizacji rynkowej o stały tort, wolę kooperację w celu powiększenia tortu dla wszystkich uczestników ekosystemu.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -1958,7 +1959,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 79,
-    "text": "Gdy mam ciekawy pomysł, od razu szukam kogoś, komu mogę o nim opowiedzieć i przedyskutować go.",
+    "text": "Gdy wpadnę na przełomowy pomysł, od razu chwytam za telefon, by przedyskutować go z zaufanymi ludźmi i sprawdzić ich reakcję.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -1983,7 +1984,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 80,
-    "text": "Z łatwością wyobrażam sobie alternatywne scenariusze rzeczywistości i światy hipotetyczne.",
+    "text": "Z łatwością tworzę w głowie alternatywne symulacje rzeczywistości i testuję hipotetyczne scenariusze 'co by było, gdyby'.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -2008,7 +2009,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 81,
-    "text": "Potrafię zachować racjonalny dystans nawet wtedy, gdy wokół mnie panuje histeria lub panika.",
+    "text": "Nie potrafię szanować lidera, który podejmuje strategiczne decyzje pod wpływem nastroju chwili, a nie rzetelnej analizy matematycznej.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -2033,7 +2034,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 82,
-    "text": "Nie lubię, gdy ktoś zmienia ustalone wcześniej plany bez wcześniejszego uprzedzenia i uzasadnienia.",
+    "text": "Moje otoczenie fizyczne – biurko, pulpit komputera, warsztat – musi być uporządkowane, aby mój umysł mógł pracować na najwyższych obrotach.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -2058,7 +2059,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 83,
-    "text": "Rzadko zamartwiam się na zapas rzeczami, na które nie mam bezpośredniego wpływu.",
+    "text": "Stawiając granice w relacjach, robię to bez poczucia winy, uznając ochronę własnej integralności za fundament zdrowego życia.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -2083,7 +2084,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 84,
-    "text": "Zaufanie do partnerów uważam za najcenniejszy kapitał w biznesie i życiu prywatnym.",
+    "text": "Dzielę się swoimi unikalnymi narzędziami i know-how z innymi, czerpiąc radość z obserwowania, jak moi podopieczni rosną i odnoszą sukcesy.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -2108,7 +2109,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 85,
-    "text": "Atmosfera tętniącego życiem biura typu open-space lub kawiarni pobudza moją produktywność.",
+    "text": "Atmosfera tętniącego życiem biura typu open-space lub gwarnej kawiarni stymuluje moją kreatywność znacznie mocniej niż sterylna cisza gabinetu.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -2133,7 +2134,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 86,
-    "text": "Rutynowe powtarzanie tych samych operacji szybko wygasza moją motywację intelektualną.",
+    "text": "Wykonywanie powtarzalnych, czysto odtwórczych czynności administracyjnych wywołuje we mnie głębokie znużenie i mentalny paraliż.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -2158,7 +2159,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 87,
-    "text": "Nie ulegam szantażom emocjonalnym - liczą się dla mnie obiektywne kryteria i spójność ustaleń.",
+    "text": "Konstruktywną informację zwrotną formułuję prosto z mostu, uznając owijanie w bawełnę za marnowanie cennego czasu zespołu.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -2183,7 +2184,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 88,
-    "text": "Zawsze doprowadzam rozpoczęte projekty do końca, nawet jeśli wymagają żmudnego wysiłku.",
+    "text": "Zanim rozpocznę jakiekolwiek działanie, muszę określić mierzalne kryteria sukcesu i zdefiniować stan końcowy (Definition of Done).",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -2208,7 +2209,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 89,
-    "text": "Poczucie własnej wartości czerpię z własnego wnętrza, a nie z liczby polubień czy komplementów.",
+    "text": "Gdy okoliczności wymagają podjęcia decyzji przy niepełnych danych, robię to zdecydowanie, nie dając się sparaliżować lękiem przed błędem.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -2233,7 +2234,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 90,
-    "text": "Sukces osiągnięty kosztem relacji i zaufania innych ludzi uważam za pozorne zwycięstwo.",
+    "text": "Kolektywna mądrość zróżnicowanego zespołu jest w moim odczuciu niemal zawsze wyższa niż geniusz pojedynczego, odizolowanego eksperta.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -2258,7 +2259,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 91,
-    "text": "Lubię być w centrum wydarzeń i rzadko odmawiam zaproszeniom na spotkania towarzyskie.",
+    "text": "Rzadko odmawiam zaproszeniom na spontaniczne wyjścia – obecność wśród ludzi ładuje moje baterie, nawet gdy czuję fizyczne zmęczenie.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -2283,7 +2284,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 92,
-    "text": "Widzę w ludziach i projektach przede wszystkim ich przyszły, jeszcze nieodkryty potencjał.",
+    "text": "Patrząc na człowieka lub projekt, widzę przede wszystkim jego uśpiony, przyszły potencjał, a nie obecny stan faktyczny.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -2308,7 +2309,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 93,
-    "text": "Złożone systemy dekonstruuję na czynniki pierwsze, badając związki przyczynowo-skutkowe.",
+    "text": "W sytuacji konfliktu między zasadami logiki a tradycją społeczną, bez wahania staję po stronie spójności pojęciowej i faktów.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -2333,7 +2334,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 94,
-    "text": "Cenię sobie klarowność ról i odpowiedzialności w zespole - każdy powinien wiedzieć, za co odpowiada.",
+    "text": "Nie potrafię odpoczywać w poczuciu, że nad moją głową wiszą niedokończone obowiązki wymagające pilnej interwencji.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -2358,7 +2359,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 95,
-    "text": "Gdy ktoś próbuje zasiać we mnie wątpliwości, spokojnie analizuję fakty i trzymam się obranego kursu.",
+    "text": "Moje reakcje emocjonalne cechuje duża odporność – drobne złośliwości, korki na drodze czy opóźnienia nie psują mi nastroju na resztę dnia.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -2383,7 +2384,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 96,
-    "text": "W dyskusjach szukam punktów wspólnych i buduję mosty, zamiast podkreślać podziały.",
+    "text": "Dbam o dobrostan psychiczny i emocjonalny otoczenia, aktywnie przeciwdziałając wypaleniu zawodowemu i toksycznej rywalizacji w grupie.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -2408,7 +2409,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 97,
-    "text": "Moje reakcje na bodźce zewnętrzne są natychmiastowe i widoczne dla otoczenia bez maskowania.",
+    "text": "Moje reakcje na bodźce zewnętrzne są natychmiastowe i czytelne – otoczenie bez trudu odgaduje moje intencje i bieżące nastawienie.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -2433,7 +2434,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 98,
-    "text": "Przekładam wielką, całościową ideę ponad drobiazgowe, rzemieślnicze wykończenie detalu.",
+    "text": "W pracy twórczej przedkładam elegancję i przełomowość wielkiej idei ponad drobiazgowe, rzemieślnicze wygładzanie każdego detalu.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -2458,7 +2459,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 99,
-    "text": "Wolę usłyszeć gorzką prawdę merytoryczną niż najmilsze, uspokajające kłamstwo.",
+    "text": "Emocje traktuję jako dane biochemiczne informujące o stanie organizmu, a nie jako wiarygodną wyrocznię prawdy o świecie zewnętrznym.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -2483,7 +2484,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 100,
-    "text": "Porządek, organizacja i systematyczność to filary, na których buduję swoją codzienną skuteczność.",
+    "text": "W sytuacjach niepewności rynkowej instynktownie tworzę plany awaryjne (Plan B i Plan C), zabezpieczając zasoby na wypadek czarnego scenariusza.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -2508,7 +2509,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 101,
-    "text": "Często analizuję w kółko swoje minione rozmowy i zachowania, zastanawiając się, co mogłem zrobić lepiej.",
+    "text": "Po udanym wystąpieniu, zamiast świętować sukces, analizuję w kółko to jedno potknięcie językowe, którego nikt poza mną nie zauważył.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -2533,7 +2534,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 102,
-    "text": "Najbardziej cenię absolutną niezależność decyzyjną - nie lubię być uzależniony od cudzego tempa pracy.",
+    "text": "Najbardziej w pracy dusi mnie konieczność czekania na akceptację komitetów i dostosowywanie tempa do najwolniejszych członków grupy.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -2558,7 +2559,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 103,
-    "text": "Po intensywnych kontaktach z ludźmi potrzebuję dłuższego czasu w całkowitej samotności, by naładować baterie.",
+    "text": "Po wielogodzinnych negocjacjach lub głośnej imprezie odczuwam fizyczne wyczerpanie i muszę spędzić wieczór w całkowitej ciszy, by zregenerować baterie.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -2583,7 +2584,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 104,
-    "text": "Ufam wyłącznie twardym faktom, weryfikowalnym danym empirycznym i konkretnym dowodom zmysłowym.",
+    "text": "Ufam wyłącznie twardym faktom, weryfikowalnym danym empirycznym i konkretnym dowodom zmysłowym, odrzucając niesprawdzone teorie.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -2608,7 +2609,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 105,
-    "text": "Decyzje podejmuję w oparciu o głęboki wewnętrzny system wartości moralnych i wpływ na dobrostan ludzi.",
+    "text": "Kluczowe decyzje życiowe podejmuję w oparciu o głęboki, wewnętrzny dekalog moralny oraz troskę o to, jak moje wybory wpłyną na dobrostan innych.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -2633,7 +2634,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 106,
-    "text": "Sztywne harmonogramy duszą moją kreatywność - wolę działać spontanicznie i elastycznie.",
+    "text": "Sztywne harmonogramy i z góry rozpisane procedury duszą mój polot – najlepiej funkcjonuję, gdy mam swobodę improwizacji i działania w locie.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -2658,7 +2659,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 107,
-    "text": "Mój wewnętrzny krytyk nieustannie podnosi poprzeczkę - nawet wielkie sukcesy dają mi tylko chwilową ulgę.",
+    "text": "Mój wewnętrzny krytyk nieustannie podnosi poprzeczkę – nawet wielkie triumfy dają mi tylko chwilową ulgę, po której wraca głód doskonałości.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -2683,7 +2684,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 108,
-    "text": "Gdy mam do wykonania kluczowe zadanie, wolę zrobić je sam od początku do końca, by mieć pewność jakości.",
+    "text": "Gdy mam zrealizować kluczowy projekt, wolę wziąć za niego 100% odpowiedzialności i pracować sam, niż tracić czas na niekończące się narady.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -2708,7 +2709,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 109,
-    "text": "Największą satysfakcję daje mi rozwiązywanie skomplikowanych problemów w zaciszu własnego gabinetu.",
+    "text": "Najwyższy stan skupienia i głębokiego przepływu (flow) osiągam, rozwiązując skomplikowane problemy w zaciszu własnego gabinetu bez zakłóceń.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -2733,7 +2734,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 110,
-    "text": "Zwracam natychmiastową uwagę na praktyczne detale otoczenia: wygląd, liczby, parametry techniczne i proporcje.",
+    "text": "Błyskawicznie rejestruję praktyczne detale otoczenia: wygląd przedmiotów, stan techniczny sprzętu, proporcje w architekturze i błędy w druku.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -2758,7 +2759,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 111,
-    "text": "Instynktownie wyczuwam emocje innych osób i potrafię natychmiast dostroić się do ich nastroju.",
+    "text": "Instynktownie wyczuwam emocjonalne podteksty w głosie rozmówcy i potrafię bezbłędnie rozpoznać, kiedy ktoś cierpi pod maską uśmiechu.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -2783,7 +2784,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 112,
-    "text": "Najlepsze pomysły przychodzą mi do głowy pod presją zbliżającego się terminu i w stanie improwizacji.",
+    "text": "Najbardziej genialne i nieszablonowe pomysły przychodzą mi do głowy pod presją zbliżającego się deadlinu i w stanie twórczej adrenaliny.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -2808,7 +2809,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 113,
-    "text": "Silnie reaguję na stres somatycznie: napięciem mięśni, bezsennością lub gonitwą myśli.",
+    "text": "Przed kluczową rozmową przygotowuję w głowie kilkanaście wariantów trudnych pytań, obawiając się, że wyjdę na osobę nieprzygotowaną.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -2833,7 +2834,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 114,
-    "text": "Wymóg konsultowania każdego kroku z komitetami lub grupą rodzi we mnie głęboką frustrację.",
+    "text": "Moja niezależność decyzyjna i suwerenność finansowa są dla mnie świętością – nie pozwolę nikomu narzucać mi warunków życia.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -2858,7 +2859,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 115,
-    "text": "Zanim zabiorę głos na forum, muszę dokładnie przemyśleć i ustrukturyzować każdą wypowiedź w myślach.",
+    "text": "W zatłoczonych przestrzeniach pełnych hałasu i intensywnych bodźców zmysłowych szybko czuję przebodźcowanie i instynktownie szukam ustronnego miejsca.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -2883,7 +2884,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 116,
-    "text": "Cenię sprawdzone, historyczne procedury i metody, które wielokrotnie udowodniły swoją niezawodność.",
+    "text": "Skupiam się na natychmiastowej wykonalności i optymalizacji bieżących zadań tu i teraz, nie marnując czasu na jałowe filozofowanie.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -2908,7 +2909,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 117,
-    "text": "Harmonia w relacjach i poczucie psychologicznego bezpieczeństwa grupy są dla mnie ważniejsze niż sucha racja.",
+    "text": "Harmonia w zespole i poczucie psychologicznego bezpieczeństwa każdego członka są dla mnie ważniejsze niż bezwzględne udowodnienie swojej racji.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -2933,7 +2934,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 118,
-    "text": "Lubię zostawiać sobie otwarte furtki i nie podejmować ostatecznych decyzji do ostatniej możliwej chwili.",
+    "text": "Lubię zostawiać sobie otwarte furtki decyzyjne do ostatniej możliwej chwili, by nie przegapić nowo pojawiających się, lepszych szans.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -2958,7 +2959,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 119,
-    "text": "Lęk przed niewystarczającym przygotowaniem motywuje mnie do podwójnego sprawdzania każdego szczegółu.",
+    "text": "Nieustannie czuję podświadomy niepokój, że jeśli choć na moment spocznę na laurach, stracę kontrolę nad swoimi osiągnięciami.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -2983,7 +2984,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 120,
-    "text": "Lepiej czuję się jako samotny wilk lub jednoosobowy lider niż jako członek kolegialnego ciała.",
+    "text": "Wierzę przede wszystkim we własny osąd i intuicję – rady znajomych czy trendy społeczne rzadko zmieniają mój obrany kurs.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3008,7 +3009,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 121,
-    "text": "Wolę głębokie relacje z 1-2 zaufanymi przyjaciółmi niż szeroki krąg powierzchownych znajomości.",
+    "text": "O wiele bardziej cenię dwugodzinną, intymną rozmowę w cztery oczy z jednym mądrym przyjacielem niż cały wieczór spędzony na powierzchownym bankiecie.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3033,7 +3034,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 122,
-    "text": "Wolę jasne instrukcje krok po kroku niż ogólne, wieloznaczne koncepcje i filozoficzne rozważania.",
+    "text": "Gdy uczę się nowego oprogramowania lub fachu, muszę natychmiast przetestować narzędzie w praktyce metodą prób i błędów, zamiast czytać abstrakcyjne traktaty.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3058,7 +3059,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 123,
-    "text": "Głęboko przeżywam niesprawiedliwość i cierpienie innych - nie potrafię przejść obojętnie obok czyjejś krzywdy.",
+    "text": "Głęboko i somatycznie przeżywam krzywdę innych – nie potrafię przejść obojętnie obok cierpienia człowieka lub zwierzęcia.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3083,7 +3084,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 124,
-    "text": "Często zmieniam plany w locie, jeśli pojawi się nowa, ciekawsza okazja lub nieprzewidziana okoliczność.",
+    "text": "Często zmieniam plany w locie – jeśli w trakcie podróży dostrzegę ciekawszy szlak, bez wahania porzucam pierwotną rezerwację.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -3108,7 +3109,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 125,
-    "text": "Porażki i potknięcia przeżywam bardzo głęboko i długo noszę w sobie ich emocjonalny ciężar.",
+    "text": "Krytyczne uwagi ze strony szefa lub klienta potrafią zepsuć mi nastrój na wiele dni i sprawiają, że podważam całość swoich kompetencji.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -3133,7 +3134,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 126,
-    "text": "Nie boję się iść pod prąd powszechnym opiniom i samotnie bronić swojego stanowiska.",
+    "text": "Najlepiej czuję się jako jednoosobowy lider lub niezależny wykonawca, który sam wyznacza standardy i rozlicza się wyłącznie z efektu.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3158,7 +3159,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 127,
-    "text": "Hałas, tłum i nadmiar bodźców zewnętrznych szybko wyczerpują moje zasoby energii mentalnej.",
+    "text": "Gdy w dyskusji pojawia się nowy, złożony wątek, wolę najpierw w milczeniu poukładać myśli w głowie, niż na gorąco wyrzucać z siebie niespójne hipotezy.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3183,7 +3184,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 128,
-    "text": "Jestem mocno zakorzeniony w chwili obecnej i pragmatycznie reaguję na to, co namacalne i aktualne.",
+    "text": "Uważam, że sprawdzona przez pokolenia tradycja i zdrowy rozsądek są bezpieczniejszym przewodnikiem niż modne, rewolucyjne eksperymenty.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3208,7 +3209,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 129,
-    "text": "W dyskusjach dbam o to, by nikogo nie zranić, wybierając taktowne i budujące sformułowania.",
+    "text": "W dyskusji dobieram słowa z ogromną delikatnością, dbając o to, by nikogo nie upokorzyć i nie zranić cudzej godności.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3233,7 +3234,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 130,
-    "text": "Dobrze czuję się w dynamicznym chaosie, gdzie sytuacja wymaga szybkiej adaptacji i elastyczności.",
+    "text": "Doskonale odnajduję się w dynamicznym chaosie, gdzie sytuacja zmienia się z minuty na minutę i wymaga błyskawicznej adaptacji.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -3258,7 +3259,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 131,
-    "text": "Często towarzyszy mi niepokój o stabilność przyszłości i zdrowie moich bliskich.",
+    "text": "W sytuacjach niepewności mój umysł instynktownie generuje pesymistyczne scenariusze awaryjne, zmuszając mnie do potrójnego sprawdzania detali.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -3283,7 +3284,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 132,
-    "text": "Moja motywacja wypływa wyłącznie ze mnie samego, a nie z pochwał czy dyrektyw przełożonych.",
+    "text": "Gdy grupa forsuje decyzję, z którą głęboko się nie zgadzam, bez wahania odłączam się od projektu i idę własną, samotną ścieżką.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3308,7 +3309,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 133,
-    "text": "Mój wewnętrzny świat idei, refleksji i wyobrażeń jest dla mnie o wiele bardziej pociągający niż życie towarzyskie.",
+    "text": "Swoje najgłębsze przemyślenia, lęki i marzenia zachowuję dla siebie, dzieląc się nimi wyłącznie z wąskim, starannie wyselekcjonowanym kręgiem powierników.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3333,7 +3334,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 134,
-    "text": "Zanim zaakceptuję nową ideę, muszę dokładnie zobaczyć jej praktyczną implementację w realnym świecie.",
+    "text": "W rozmowie cenię zwięzłość, precyzję i konkretne przykłady z życia – kwieciste, metaforyczne tyrady szybko wyprowadzają mnie z równowagi.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3358,7 +3359,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 135,
-    "text": "Uważam, że empatia i ludzkie ciepło mają wyższą wartość niż bezduszna, technokratyczna optymalizacja.",
+    "text": "Uważam, że empatia, ludzkie ciepło i autentyczność mają w ostatecznym rozrachunku wyższą wartość niż bezduszna, technokratyczna optymalizacja.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3383,7 +3384,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 136,
-    "text": "Wolę eksplorować i eksperymentować niż trzymać się raz ustalonej, nużącej rutyny.",
+    "text": "Wolę eksperymentować, badać i testować hipotezy, niż trzymać się raz ustalonej, nużącej instrukcji obsługi.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -3408,7 +3409,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 137,
-    "text": "Bardzo zależy mi na opinii osób, które szanuję - obawiam się rozczarowania ich oczekiwań.",
+    "text": "Często porównuję swoje tempo rozwoju i osiągnięcia z sukcesami innych, odczuwając bolesną presję, że wciąż jestem za daleko w tyle.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -3433,7 +3434,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 138,
-    "text": "Cenię samowystarczalność finansową, intelektualną i emocjonalną ponad wszelkie układy grupowe.",
+    "text": "Nie lubię być uzależniony od cudzych zasobów, narzędzi czy przysług – dążę do pełnej samowystarczalności operacyjnej.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3458,7 +3459,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 139,
-    "text": "W sytuacjach społecznych wolę obserwować bieg wydarzeń z boku, niż być w centrum uwagi.",
+    "text": "Cisza, samotność i brak zewnętrznych oczekiwań są dla mnie podstawowym tlenem niezbędnym do zachowania równowagi psychicznej.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3483,7 +3484,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 140,
-    "text": "Mam doskonałą pamięć do szczegółów minionych wydarzeń, dat, faktów i procedur operacyjnych.",
+    "text": "Przedkładam rzetelne, dopracowane rzemiosło i fizyczną jakość wykonania przedmiotu nad wzniosły, ale niepraktyczny koncept konceptualny.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3508,7 +3509,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 141,
-    "text": "Potrafię wybaczyć błędy merytoryczne, jeśli widzę czyste intencje i zaangażowanie serca.",
+    "text": "Potrafię wybaczyć współpracownikowi błąd techniczny lub niedociągnięcie, jeśli widzę jego czyste serce, oddanie i szczere zaangażowanie.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3533,7 +3534,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 142,
-    "text": "Mój styl pracy to zrywy intensywnej pasji przeplatane okresami inkubacji i swobodnego błądzenia myślami.",
+    "text": "Mój styl pracy to zrywy intensywnej, bezsennej pasji przeplatane okresami inkubacji myśli i swobodnego błądzenia w chmurach.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -3558,7 +3559,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 143,
-    "text": "Moje poczucie własnej wartości podlega wahaniom w zależności od bieżących wyników i aprobaty otoczenia.",
+    "text": "Przeżywam silny stres somatyczny – ucisk w żołądku, napięcie karku – przed każdym ważnym testem, audytem czy publicznym sprawdzianem.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -3583,7 +3584,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 144,
-    "text": "Wierzę, że przełomowe innowacje są dziełem wybitnych jednostek, a nie kompromisów zespołowych.",
+    "text": "Wolę popełnić błąd na własny rachunek i ponieść jego koszty, niż odnieść sukces będąc marionetką w cudzych rękach.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3608,7 +3609,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 145,
-    "text": "Pracuję najefektywniej w trybie głębokiej pracy bez rozpraszaczy i niespodziewanych telefonów.",
+    "text": "Podczas burzy mózgów w dużej grupie wolę notować własne spostrzeżenia na kartce, niż przekrzykiwać się z innymi o prawo do głosu.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3633,7 +3634,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 146,
-    "text": "Skupiam się na natychmiastowej wykonalności i optymalizacji bieżących zadań bez zbędnego teoretyzowania.",
+    "text": "Pamiętam z niezwykłą dokładnością chronologię zdarzeń, konkretne daty, liczby oraz słowa wypowiedziane w sporze sprzed wielu miesięcy.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3658,7 +3659,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 147,
-    "text": "Najważniejszą miarą udanego życia jest głębia i autentyczność więzi międzyludzkich, które zbudowałem.",
+    "text": "Najważniejszą miarą udanego życia jest dla mnie głębia i czystość relacji międzyludzkich, które zbudowałem, a nie zgromadzony majątek czy tytuły.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3683,7 +3684,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 148,
-    "text": "Zamiast planować każdy krok, ufam swojemu instynktowi i umiejętności reagowania na bieżąco.",
+    "text": "Zamiast planować każdy krok z kalkulatorem w ręku, ufam swojemu instynktowi i zdolności do improwizowania najlepszych rozwiązań.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -3708,7 +3709,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 149,
-    "text": "Zdarza mi się wyolbrzymiać drobne problemy do rangi życiowych katastrof.",
+    "text": "Nawet gdy wszystko idzie zgodnie z planem, podświadomie czekam, aż coś niespodziewanie runie i ujawni ukrytą wadę systemu.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -3733,7 +3734,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 150,
-    "text": "Gdy projekt wymaga kompromisów obniżających jakość, wolę zrezygnować ze współpracy i pójść własną drogą.",
+    "text": "Biurokratyczne procedury, korporacyjna polityka i 'rytuały lojalnościowe' budzą we mnie odruch buntu i natychmiastową chęć ucieczki.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3758,7 +3759,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 151,
-    "text": "Cenię sobie prywatność i rzadko dzielę się swoimi intymnymi myślami z osobami spoza ścisłego kręgu.",
+    "text": "Gdy ktoś nieznajomy bez zapowiedzi narusza moje granice lub wypytuje o sprawy prywatne, natychmiast zamykam się w chłodnej rezerwie.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3783,7 +3784,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 152,
-    "text": "Moje zmysły błyskawicznie rejestrują drobne zmiany w fizycznym otoczeniu, których inni nie zauważają.",
+    "text": "Moje zmysły natychmiast wychwytują subtelne anomalie fizyczne: dziwny dźwięk w silniku, zmianę zapachu, krzywo powieszony obraz czy niespasowany element.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3808,7 +3809,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 153,
-    "text": "Zwracam ogromną uwagę na motywacje, uczucia i niewypowiedziane potrzeby moich rozmówców.",
+    "text": "W rozmowie znacznie bardziej interesują mnie niewypowiedziane motywacje, tęsknoty i wrażliwość mojego rozmówcy niż same suche fakty.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3833,7 +3834,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 154,
-    "text": "Z łatwością zmieniam kierunek działania, gdy dotychczasowa ścieżka przestaje przynosić satysfakcję.",
+    "text": "Z łatwością zmieniam kierunek kariery lub projektu, gdy dotychczasowa ścieżka staje się przewidywalna i przestaje dostarczać intelektualnej iskry.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -3858,7 +3859,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 155,
-    "text": "Przed ważnym wystąpieniem lub egzaminem odczuwam silny ucisk w żołądku i zdenerwowanie.",
+    "text": "Mam tendencję do nadmiernego poprawiania i cyzelowania projektów w nieskończoność z obawy przed wytknięciem mi jakiejkolwiek niedoskonałości.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -3883,7 +3884,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 156,
-    "text": "Największą satysfakcję daje mi realizacja własnej, autorskiej wizji bez zewnętrznej ingerencji.",
+    "text": "Największą satysfakcję daje mi realizacja bezkompromisowej, autorskiej wizji, w której nikt nie ingeruje w moje wybory artystyczne lub techniczne.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -3908,7 +3909,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 157,
-    "text": "Często czuję potrzebę pobycia sam na sam z naturą, książką lub własnym projektem twórczym.",
+    "text": "Samotny spacer po lesie, obcowanie z naturą lub zatopienie się w książce dają mi znacznie głębszy odpoczynek niż wyjazd do tętniącego życiem kurortu.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -3933,7 +3934,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 158,
-    "text": "Doceniam fizyczne rzemiosło, namacalne rezultaty pracy i solidną jakość wykonania przedmiotów.",
+    "text": "Największą satysfakcję zawodową daje mi namacalny, widoczny rezultat mojej pracy – działający mechanizm, postawiony budynek, podpisana umowa.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -3958,7 +3959,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 159,
-    "text": "Nie potrafiłbym zrealizować celu biznesowego, gdyby wymagało to cynicznego skrzywdzenia drugiego człowieka.",
+    "text": "Nie potrafiłbym zrealizować spektakularnego zysku biznesowego, gdyby wymagało to cynicznego oszukania lub skrzywdzenia drugiego człowieka.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -3983,7 +3984,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 160,
-    "text": "Często zaczynam kilka równoległych projektów, czerpiąc frajdę z ich jednoczesnego rozwijania.",
+    "text": "Często prowadzę kilka równoległych, fascynujących wątków na raz, czerpiąc radość z wielozadaniowości i płynnego przeskakiwania między ideami.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4008,7 +4009,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 161,
-    "text": "Trudno mi całkowicie wyłączyć myślenie o obowiązkach zawodowych w trakcie weekendu lub urlopu.",
+    "text": "Często analizuję w myślach swoje minione rozmowy towarzyskie, zastanawiając się, czy nie zostałem źle odebrany przez rozmówcę.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -4033,7 +4034,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 162,
-    "text": "Nie lubię, gdy ktoś narzuca mi metody pracy lub próbuje zarządzać moim czasem.",
+    "text": "W relacjach partnerskich wymagam poszanowania mojej nienaruszalnej strefy wolności – próby osaczania czy kontroli natychmiast kończą znajomość.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -4058,7 +4059,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 163,
-    "text": "Drobne pogawędki o pogodzie (small talk) bywają dla mnie nużące i powierzchowne.",
+    "text": "Milczenie w obecności bliskiej osoby jest dla mnie naturalne i komfortowe – nie odczuwam przymusu zapełniania ciszy banalną paplaniną.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4083,7 +4084,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 164,
-    "text": "Wolę operować na konkretnych przykładach z życia wziętych niż na oderwanych od rzeczywistości modelach.",
+    "text": "Podczas debaty strategicznej natychmiast pytam o realny budżet, dostępność ludzi, technologię i logistykę, sprowadzając marzycieli na ziemię.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4108,7 +4109,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 165,
-    "text": "Cenię sobie ciepłą atmosferę w zespole, w której każdy czuje się doceniony, wysłuchany i ważny.",
+    "text": "Ciepła, bezpieczna i pełna zaufania atmosfera w zespole wyzwala we mnie stukrotnie większe zaangażowanie niż surowy system premiowy.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4133,7 +4134,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 166,
-    "text": "Zbyt szczegółowe instrukcje i checklisty wywołują we mnie chęć buntu i szukania własnych dróg.",
+    "text": "Zbyt drobiazgowe checklisty i mikrozarządzanie wywołują we mnie natychmiastowy odruch buntu i potrzebę pójścia pod prąd.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4158,7 +4159,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 167,
-    "text": "Gdy ktoś nie odpowiada na moją wiadomość, od razu zastanawiam się, czy czymś go nie uraziłem.",
+    "text": "Wysoka wrażliwość na błędy czyni ze mnie niezrównanego weryfikatora jakości, ale kosztuje mnie to ogromne nakłady energii nerwowej.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -4183,7 +4184,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 168,
-    "text": "Wolę ponieść pełną odpowiedzialność za własny błąd niż dzielić winę za porażkę grupy.",
+    "text": "Rzadko proszę o pomoc, nawet w najtrudniejszych momentach życia – wychodzę z założenia, że dorosły człowiek musi sam rozwiązywać swoje problemy.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -4208,7 +4209,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 169,
-    "text": "Zdecydowanie wolę komunikację pisemną (e-mail, czat), która pozwala mi precyzyjnie dobrać słowa.",
+    "text": "Wchodząc w nowe środowisko, wolę najpierw wnikliwie obserwować układ sił i dynamikę z boku, niż od razu pchać się w centrum uwagi.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4233,7 +4234,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 170,
-    "text": "Uważam, że zbyt wiele czasu poświęca się na bezowocne debaty, zamiast wziąć się do konkretnej roboty.",
+    "text": "Uważam, że zbyt wiele czasu marnuje się na bezowocne panele dyskusyjne, zamiast wziąć do ręki narzędzia i po prostu zrobić to, co należy.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4258,7 +4259,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 171,
-    "text": "Gdy ktoś przeżywa trudne chwile, przede wszystkim okazuję mu serdeczne wsparcie emocjonalne i obecność.",
+    "text": "Gdy bliska osoba przeżywa załamanie, nie zasypuję jej logicznymi radami, lecz ofiarowuję jej swoją bezwarunkową obecność, ucho i ciepło.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4283,7 +4284,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 172,
-    "text": "Najlepiej wypoczywam bez zegarka na ręku, dając się ponieść rytmowi dnia i przypadkowym zdarzeniom.",
+    "text": "Najlepiej wypoczywam bez zegarka na ręku, dając się ponieść rytmowi chwili i serendipii – szczęśliwym zbiegom okoliczności.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4308,7 +4309,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 173,
-    "text": "Ciągła czujność i potrzeba samodoskonalenia sprawiają, że rzadko pozwalam sobie na beztroski odpoczynek.",
+    "text": "Gdy w zespole pojawia się problem, odruchowo szukam winy w swoich niedopatrzeniach, biorąc na siebie nadmierną odpowiedzialność emocjonalną.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -4333,7 +4334,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 174,
-    "text": "Moja niezależność myślenia jest nienaruszalna - nie ulegam presji konformizmu społecznego.",
+    "text": "Praca w kolektywach, gdzie odpowiedzialność się rozmywa i nikt za nic nie odpowiada, wywołuje we mnie głęboką frustrację.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -4358,7 +4359,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 175,
-    "text": "Moje wewnętrzne życie psychiczne jest bogate, a moje przemyślenia dojrzewają powoli w ciszy.",
+    "text": "Moje poczucie własnej wartości budują ciche, wewnętrzne zwycięstwa w pracy intelektualnej, a nie poklask i lajki na forum publicznym.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4383,7 +4384,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 176,
-    "text": "Moje decyzje bazują na realnym bilansie zasobów, dostępnych narzędziach i bezpośrednim doświadczeniu.",
+    "text": "Moje decyzje bazują na realnym bilansie dostępnych surowców i doświadczeniach z przeszłości, a nie na optymistycznych życzeniach przyszłości.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4408,7 +4409,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 177,
-    "text": "Mój wewnętrzny kompas etyczny mówi mi natychmiast, co jest moralnie godne, a co nie.",
+    "text": "Mój wewnętrzny kompas sumienia bezbłędnie wskazuje mi to, co jest prawe i szlachetne, nawet gdy całe otoczenie uważa inaczej.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4433,7 +4434,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 178,
-    "text": "W sytuacjach nieprzewidzianych zachowuję luz - traktuję zmiany jako ciekawą przygodę.",
+    "text": "Gdy sprawy przybierają niespodziewany obrót, nie panikuję – traktuję nieprzewidziane trudności jako fascynującą przygodę do rozwikłania.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4458,7 +4459,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 179,
-    "text": "Gdy coś idzie nie tak, w pierwszej kolejności doszukuję się winy we własnym postępowaniu.",
+    "text": "Trudno mi w pełni zrelaksować się na urlopie – myśli o czekających wyzwaniach i niezałatwionych sprawach stale krążą z tyłu mojej głowy.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -4483,7 +4484,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 180,
-    "text": "W pracy twórczej i analitycznej wymagam całkowitej suwerenności i autonomii operacyjnej.",
+    "text": "Moje cele życiowe definiuję sam w zaciszu gabinetu, kompletnie ignorując to, czego oczekują ode mnie rodzina, społeczeństwo czy tradycja.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -4508,7 +4509,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 181,
-    "text": "Po całym dniu spotkań marzę wyłącznie o cichym wieczorze we własnym domu bez gości.",
+    "text": "Podczas wielodniowych warsztatów firmowych najbardziej drenuje mnie nie wysiłek merytoryczny, lecz ciągła konieczność podtrzymywania towarzyskiej fasady.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4533,7 +4534,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 182,
-    "text": "Praktyczne umiejętności użytkowe cenię wyżej niż znajomość ezoterycznych teorii akademickich.",
+    "text": "Praktyczne umiejętności radzenia sobie w kryzysie (np. naprawa instalacji, pierwsza pomoc) cenię wyżej niż erudycję z zakresu teorii kultury.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4558,7 +4559,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 183,
-    "text": "Potrafię dostrzec unikalną wartość w każdym człowieku, niezależnie od jego pozycji czy sukcesów.",
+    "text": "W każdym człowieku dostrzegam niezbywalną godność i unikalne piękno, bez względu na jego status społeczny, wykształcenie czy błędy z przeszłości.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4583,7 +4584,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 184,
-    "text": "Wolę gromadzić kolejne informacje i perspektywy, niż przedwcześnie domykać proces decyzyjny.",
+    "text": "Wolę zebrać jeszcze jeden zestaw danych i spojrzeć na problem z innej perspektywy, niż przedwcześnie zamknąć sprawę sztywnym werdyktem.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4608,7 +4609,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 185,
-    "text": "Wrażliwość na bodźce emocjonalne sprawia, że łatwo wyprowadzić mnie z równowagi psychicznej.",
+    "text": "Opinia autorytetów i szacunek środowiska branżowego mają dla mnie ogromne znaczenie – lęk przed kompromitacją jest moim potężnym motorem.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -4633,7 +4634,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 186,
-    "text": "Nie czuję potrzeby przynależności do żadnej grupy ani instytucji, by czuć się spełniony.",
+    "text": "Wybieram wolność i niepewność na własnym garnuszku zamiast ciepłej, bezpiecznej posady w złotej klatce korporacji.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -4658,7 +4659,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 187,
-    "text": "Nie odczuwam potrzeby ciągłego dzielenia się swoimi planami ze światem dopóki nie zostaną sfinalizowane.",
+    "text": "Uważam, że przełomowe dzieła filozoficzne, naukowe i literackie powstają w skupieniu samotniczej pracy, z dala od zgiełku i modnych kawiarni.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4683,7 +4684,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 188,
-    "text": "Wiarygodność człowieka oceniam po jego konkretnych, mierzalnych czynach, a nie wzniosłych deklaracjach.",
+    "text": "Wiarygodność człowieka oceniam po jego konkretnych, udokumentowanych czynach i dowiezionych projektach, a nie po pięknych deklaracjach misji.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4708,7 +4709,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 189,
-    "text": "Relacje międzyludzkie traktuję jako cel sam w sobie, a nie narzędzie do osiągania korzyści.",
+    "text": "Głębokie więzi z ludźmi traktuję jako świętość samą w sobie, a nie jako instrument do robienia kariery czy budowania wpływów.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4733,7 +4734,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 190,
-    "text": "Cenię sobie swobodę wyboru godzin pracy i elastyczność otoczenia ponad sztywną dyscyplinę.",
+    "text": "Elastyczny czas pracy i brak sztywnych ram godzinowych są dla mojej produktywności ważniejsze niż wysokie, stabilne premie w korporacji.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4758,7 +4759,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 191,
-    "text": "Mój perfekcjonizm bywa źródłem wyczerpania, ale to dzięki niemu unikam kompromisów z jakością.",
+    "text": "Pod presją czasu staję się niezwykle wymagający i nerwowy wobec otoczenia, nie tolerując najmniejszego przejawu powierzchowności.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -4783,7 +4784,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 192,
-    "text": "Samodzielnie wyznaczam sobie cele i standardy, nie oglądając się na to, co robi większość.",
+    "text": "W dyskusjach nie ulegam presji konformizmu – potrafię jako jedyny w pokoju zagłosować przeciwko jednomyślnej większości.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -4808,7 +4809,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 193,
-    "text": "Uważam, że umiejętność milczenia i słuchania jest rzadszą i cenniejszą cnotą niż wielomówność.",
+    "text": "W relacji miłosnej potrzebuję nienaruszalnej przestrzeni na własne myśli i hobby – zaborczość partnera odbieram jako próbę odebrania mi tożsamości.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4833,7 +4834,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 194,
-    "text": "Dbam o porządek w danych liczbowych, dokumentacji i fizycznym układzie swojego stanowiska pracy.",
+    "text": "Dbam o bezwzględną precyzję w dokumentach finansowych, specyfikacjach technicznych i procedurach bezpieczeństwa.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4858,7 +4859,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 195,
-    "text": "Spory w zespole staram się łagodzić poprzez dialog, budowanie mostów i zrozumienie perspektyw obu stron.",
+    "text": "Spory w rodzinie lub pracy staram się łagodzić poprzez cierpliwy dialog, zrozumienie racji obu stron i leczenie ran emocjonalnych.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4883,7 +4884,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 196,
-    "text": "Wiele moich największych sukcesów było owocem czystego przypadku, impulsu i elastycznej reakcji.",
+    "text": "Wiele moich największych życiowych osiągnięć było dziełem czystego przypadku, błyskawicznego impulsu i odwagi skorzystania z okazji.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -4908,7 +4909,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 197,
-    "text": "Gdy napotykam trudność, instynktownie wycofuję się, by przetrawić ją we własnym wnętrzu.",
+    "text": "Wieczór pod kocem z pasjonującym esejem i dobrą herbatą regeneruje mnie stukrotnie lepiej niż jakakolwiek głośna domówka.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -4933,7 +4934,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 198,
-    "text": "Gdy kupuję sprzęt, sprawdzam specyfikację techniczną, wytrzymałość materiałów i gwarancję funkcjonalności.",
+    "text": "Kupując narzędzie lub samochód, sprawdzam parametry techniczne, trwałość podzespołów i dostępność serwisu, kompletnie ignorując magię marketingu.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -4958,7 +4959,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 199,
-    "text": "Głęboko wzrusza mnie sztuka, poezja i przejawy bezinteresownej dobroci w świecie.",
+    "text": "Głęboko wzrusza mnie poezja, muzyka symfoniczna i akty bezinteresownej dobroci w świecie pełnym cynizmu.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -4983,7 +4984,7 @@ window.QUESTIONS_DETAILED_200 = [
   },
   {
     "id": 200,
-    "text": "Nie przywiązuję się do sztywnych planów - życie jest zbyt zmienne, by z góry przewidzieć każdy scenariusz.",
+    "text": "Nie przywiązuję się niewolniczo do swoich planów – życie jest zbyt bogate i zmienne, by dało się zamknąć w ciasnym excelu.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -5011,7 +5012,7 @@ window.QUESTIONS_DETAILED_200 = [
 window.QUESTIONS_QUICK_50 = [
   {
     "id": 1,
-    "text": "Czerpię energię z dynamicznych interakcji w dużych grupach ludzi i łatwo nawiązuję kontakt z nieznajomymi.",
+    "text": "Gdy wchodzę do sali pełnej nieznajomych na konferencji lub bankiecie, odruchowo szukam grupy, by zainicjować dynamiczną rozmowę i przełamać lody.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -5036,7 +5037,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 2,
-    "text": "Wystąpienia publiczne i możliwość porywania audytorium swoją wizją dodają mi potężnego zastrzyku sił witalnych.",
+    "text": "Analizując raport branżowy, natychmiast ignoruję bieżące statystyki, by wyłuskać niewidoczny jeszcze trend, który zmieni rynek za 5 lat.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -5061,7 +5062,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 3,
-    "text": "Wolę przegadywać swoje pomysły na głos z zespołem, niż przetwarzać je w samotności.",
+    "text": "Gdy przyjaciel popełnia ewidentny błąd logiczny w swoim planie, przedstawiam mu bezlitosną analizę faktów, nawet jeśli wiem, że sprawi mu to przykrość.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -5086,7 +5087,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 4,
-    "text": "Naturalnie przejmuję rolę inicjatora rozmów i animatora życia towarzyskiego podczas spotkań.",
+    "text": "Mój harmonogram dnia ma klarowną hierarchię priorytetów – pracuję najefektywniej, gdy wiem dokładnie, co i w jakiej kolejności mam zrealizować.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -5111,7 +5112,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 5,
-    "text": "Długie okresy izolacji i ciszy szybko wywołują u mnie poczucie znużenia i spadek motywacji.",
+    "text": "Nawet gdy popełnię spektakularny błąd na oczach całego zarządu, nie biczuję się w myślach, lecz traktuję to jako lekcję i natychmiast idę dalej.",
     "axis": "EI",
     "weight": 2,
     "cogFunc": {
@@ -5136,7 +5137,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 6,
-    "text": "Po intensywnych kontaktach z ludźmi potrzebuję dłuższego czasu w całkowitej samotności, by naładować baterie.",
+    "text": "Sukces smakuje dla mnie w pełni tylko wtedy, gdy mogę dzielić go z zespołem i wspólnie celebrować owoce zespołowego wysiłku.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -5161,7 +5162,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 7,
-    "text": "Największą satysfakcję daje mi rozwiązywanie skomplikowanych problemów w zaciszu własnego gabinetu.",
+    "text": "Prowadzenie dynamicznej prezentacji przed audytorium i możliwość porywania ludzi swoją wizją dodają mi potężnego zastrzyku sił witalnych.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -5186,7 +5187,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 8,
-    "text": "Zanim zabiorę głos na forum, muszę dokładnie przemyśleć i ustrukturyzować każdą wypowiedź w myślach.",
+    "text": "Fascynują mnie abstrakcyjne dylematy epistemologiczne, teorie fizyki kwantowej oraz metaforyczne modele wyjaśniające naturę rzeczywistości.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -5211,7 +5212,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 9,
-    "text": "Wolę głębokie relacje z 1-2 zaufanymi przyjaciółmi niż szeroki krąg powierzchownych znajomości.",
+    "text": "W sytuacji silnego kryzysu potrafię całkowicie wyciszyć emocje i podjąć racjonalną decyzję z perspektywy chłodnego, bezstronnego chirurga.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -5236,7 +5237,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 10,
-    "text": "Hałas, tłum i nadmiar bodźców zewnętrznych szybko wyczerpują moje zasoby energii mentalnej.",
+    "text": "Gdy mam przed sobą ważny projekt, dzielę go na etapy i domykam kluczowe zadania z dużym wyprzedzeniem, by uniknąć paniki przed deadlinem.",
     "axis": "EI",
     "weight": -2,
     "cogFunc": {
@@ -5261,7 +5262,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 11,
-    "text": "W nowych sytuacjach najpierw intuicyjnie syntetyzuję ukryte trendy i dalekosiężne prawdopodobieństwa przyszłości.",
+    "text": "Zimna krew w momentach skrajnego chaosu lub paniki otoczenia przychodzi mi naturalnie – nie pozwalam, by strach paraliżował mój osąd.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -5286,7 +5287,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 12,
-    "text": "Fascynują mnie abstrakcyjne koncepcje filozoficzne, metafory i wielopoziomowe teorie naukowe.",
+    "text": "Wolę wypracować mądry kompromis, z którego każda strona wyjdzie z podniesioną głową, niż przeforsować własną wizję siłą kosztem rozbicia grupy.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -5311,7 +5312,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 13,
-    "text": "Czerpię radość z dostrzegania nieoczywistych powiązań między z pozoru odległymi od siebie dziedzinami wiedzy.",
+    "text": "Gdy utknę w martwym punkcie projektu, wolę natychmiast zwołać burzę mózgów i 'zderzać' idee w rozmowie, niż ślęczeć samemu nad dokumentacją.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -5336,7 +5337,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 14,
-    "text": "O wiele bardziej interesuje mnie to, co 'mogłoby być', niż to, co istnieje tu i teraz w sposób materialny.",
+    "text": "Czerpię ogromną frajdę z łączenia z pozoru odległych od siebie dziedzin – np. biologii ewolucyjnej z architekturą oprogramowania czy sztuką.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -5361,7 +5362,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 15,
-    "text": "Moje myślenie ma charakter skokowy - często dochodzę do wniosków dzięki nagłym, wewnętrznym wglądom (insight).",
+    "text": "Uważam, że bezkompromisowa prawda merytoryczna i uczciwość intelektualna stoją wyżej niż ochrona czyjegoś chwilowego komfortu psychicznego.",
     "axis": "NS",
     "weight": 2,
     "cogFunc": {
@@ -5386,7 +5387,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 16,
-    "text": "Ufam wyłącznie twardym faktom, weryfikowalnym danym empirycznym i konkretnym dowodom zmysłowym.",
+    "text": "Niedotrzymanie zobowiązania lub spóźnienie ze strony współpracownika traktuję jako poważne naruszenie zaufania i brak szacunku dla mojego czasu.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -5411,7 +5412,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 17,
-    "text": "Zwracam natychmiastową uwagę na praktyczne detale otoczenia: wygląd, liczby, parametry techniczne i proporcje.",
+    "text": "Krytyka ze strony osób, których autorytetu merytorycznego nie cenię, spływa po mnie bez śladu i nie narusza mojego poczucia wartości.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -5436,7 +5437,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 18,
-    "text": "Cenię sprawdzone, historyczne procedury i metody, które wielokrotnie udowodniły swoją niezawodność.",
+    "text": "Gdy kolega z zespołu ma problem z zadaniem, bez wahania odkładam na bok swoje obowiązki, by wesprzeć go radą i wspólnym działaniem.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -5461,7 +5462,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 19,
-    "text": "Wolę jasne instrukcje krok po kroku niż ogólne, wieloznaczne koncepcje i filozoficzne rozważania.",
+    "text": "W trakcie spotkań towarzyskich naturalnie przejmuję rolę gospodarza rozmowy, dbając o to, by dyskusja tętniła energią i nikt nie czuł się pominięty.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -5486,7 +5487,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 20,
-    "text": "Jestem mocno zakorzeniony w chwili obecnej i pragmatycznie reaguję na to, co namacalne i aktualne.",
+    "text": "O wiele bardziej pociąga mnie projektowanie tego, co mogłoby powstać w przyszłości, niż żmudne zarządzanie tym, co już istnieje w świecie materialnym.",
     "axis": "NS",
     "weight": -2,
     "cogFunc": {
@@ -5511,7 +5512,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 21,
-    "text": "Podejmując kluczowe decyzje, kieruję się chłodną, bezstronną analizą logiczną i rachunkiem zysków oraz strat.",
+    "text": "Gdy napotykam lukę logiczną lub niespójność w argumentacji rozmówcy, odruchowo ją dekonstruuję, dążąc do definicyjnej precyzji.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -5536,7 +5537,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 22,
-    "text": "Potrafię całkowicie odciąć emocje i spojrzeć na problem z perspektywy obiektywnego obserwatora.",
+    "text": "Przed wyruszeniem w daleką podróż mam precyzyjnie zarezerwowane noclegi, zaplanowaną trasę awaryjną i spakowaną apteczkę.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -5561,7 +5562,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 23,
-    "text": "Uważam, że prawda i uczciwość merytoryczna są ważniejsze niż chronienie czyichś chwilowych uczuć.",
+    "text": "Wierzę głęboko we własną sprawczość – cokolwiek przyniesie los, znajdę sposób, by zaadaptować się i wyjść z opresji obronną ręką.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -5586,7 +5587,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 24,
-    "text": "Gdy napotykam błąd lub nielogiczność, natychmiast to punktuję, dążąc do bezwzględnej spójności zasad.",
+    "text": "Wierzę w radykalną transparentność i dzielenie się wiedzą – pilnowanie własnego poletka i silosy informacyjne uważam za plagę organizacji.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -5611,7 +5612,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 25,
-    "text": "W relacjach zawodowych cenię przede wszystkim kompetencje, profesjonalizm i rzetelne dowożenie rezultatów.",
+    "text": "Dłuższy czas spędzony w całkowitej izolacji od ludzi wywołuje u mnie spadek nastroju, znużenie i potrzebę natychmiastowego wyjścia do świata.",
     "axis": "TF",
     "weight": 2,
     "cogFunc": {
@@ -5636,7 +5637,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 26,
-    "text": "Decyzje podejmuję w oparciu o głęboki wewnętrzny system wartości moralnych i wpływ na dobrostan ludzi.",
+    "text": "Moje myślenie ma charakter nieliniowy – kluczowe rozwiązania problemów pojawiają się często jako nagłe, całościowe błyski intuicji (insight).",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -5661,7 +5662,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 27,
-    "text": "Instynktownie wyczuwam emocje innych osób i potrafię natychmiast dostroić się do ich nastroju.",
+    "text": "Współpracowników oceniam wyłącznie przez pryzmat ich mierzalnych kompetencji, rzetelności i dowożonych rezultatów, a nie osobistej sympatii.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -5686,7 +5687,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 28,
-    "text": "Harmonia w relacjach i poczucie psychologicznego bezpieczeństwa grupy są dla mnie ważniejsze niż sucha racja.",
+    "text": "Nie znoszę zawieszonych w próżni, niedomkniętych spraw – odczuwam fizyczną ulgę, gdy mogę ostatecznie odhaczyć zadanie z listy.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -5711,7 +5712,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 29,
-    "text": "Głęboko przeżywam niesprawiedliwość i cierpienie innych - nie potrafię przejść obojętnie obok czyjejś krzywdy.",
+    "text": "Rzadko odczuwam syndrom oszusta – mam adekwatną, ugruntowaną świadomość własnych talentów i unikalnego wkładu w sukces.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -5736,7 +5737,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 30,
-    "text": "W dyskusjach dbam o to, by nikogo nie zranić, wybierając taktowne i budujące sformułowania.",
+    "text": "W podejmowaniu decyzji dbam o wysłuchanie każdego głosu, wierząc, że nawet najcichszy członek zespołu może wnieść kluczową perspektywę.",
     "axis": "TF",
     "weight": -2,
     "cogFunc": {
@@ -5761,7 +5762,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 31,
-    "text": "Mój dzień musi mieć klarowną strukturę; najlepiej funkcjonuję według zaplanowanego harmonogramu.",
+    "text": "Moje myśli krystalizują się najszybciej w trakcie mówienia – dzielę się pierwszymi hipotezami na bieżąco, testując ich rezonans na słuchaczach.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -5786,7 +5787,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 32,
-    "text": "Nie znoszę odkładania spraw na później i zawieszonych, niedomkniętych kwestii.",
+    "text": "Planując przedsięwzięcie, skupiam się na architekturze całego ekosystemu i nadrzędnej filozofii, pozostawiając detaliczne procedury wykonawcom.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -5811,7 +5812,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 33,
-    "text": "Zawsze dotrzymuję ustalonych terminów (deadlines) i wymagam tego samego od współpracowników.",
+    "text": "Spory w zespole rozwiązuję w oparciu o twarde dowody, dane liczbowe i logikę systemową, a nie odwoływanie się do empatii czy sentymentów.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -5836,7 +5837,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 34,
-    "text": "Lubię mieć pod kontrolą bieg wydarzeń i zawczasu przygotowane plany awaryjne (Plan B i C).",
+    "text": "W sferze pracy i finansów wymagam żelaznego porządku: zorganizowanych folderów, precyzyjnych umów i przejrzystych rozliczeń.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -5861,7 +5862,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 35,
-    "text": "Uporządkowana przestrzeń wokół mnie przekłada się bezpośrednio na spokój i klarowność mojego myślenia.",
+    "text": "Konfrontacja z trudnym, dominującym rozmówcą nie wywołuje u mnie lęku – patrzę mu w oczy i spokojnie bronię swojego stanowiska.",
     "axis": "JP",
     "weight": 2,
     "cogFunc": {
@@ -5886,7 +5887,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 36,
-    "text": "Sztywne harmonogramy duszą moją kreatywność - wolę działać spontanicznie i elastycznie.",
+    "text": "Budowanie atmosfery zaufania, empatii i wzajemnego szacunku uważam za najważniejszą rolę lidera w zespole.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -5911,7 +5912,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 37,
-    "text": "Najlepsze pomysły przychodzą mi do głowy pod presją zbliżającego się terminu i w stanie improwizacji.",
+    "text": "Najlepiej regeneruję siły w ruchu, w tętniącym życiem otoczeniu miejskim i w towarzystwie inspirujących, aktywnych znajomych.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -5936,7 +5937,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 38,
-    "text": "Lubię zostawiać sobie otwarte furtki i nie podejmować ostatecznych decyzji do ostatniej możliwej chwili.",
+    "text": "Często rozmyślam o fundamentalnych prawach rządzących historią cywilizacji, mechanizmach władzy i ewolucji ludzkiej świadomości.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -5961,7 +5962,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 39,
-    "text": "Często zmieniam plany w locie, jeśli pojawi się nowa, ciekawsza okazja lub nieprzewidziana okoliczność.",
+    "text": "Potrafię podjąć bolesną decyzję o zakończeniu nierentownego projektu lub zwolnieniu pracownika, jeśli wymaga tego przetrwanie całej organizacji.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -5986,7 +5987,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 40,
-    "text": "Dobrze czuję się w dynamicznym chaosie, gdzie sytuacja wymaga szybkiej adaptacji i elastyczności.",
+    "text": "Podejmuję decyzje szybko i definitywnie, woląc zaakceptować ryzyko błędu niż tkwić w paraliżującym zawieszeniu decyzyjnym.",
     "axis": "JP",
     "weight": -2,
     "cogFunc": {
@@ -6011,7 +6012,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 41,
-    "text": "Rzadko odczuwam paraliżujący lęk przed porażką - wierzę w swoje kompetencje i zdolność poradzenia sobie z kryzysem.",
+    "text": "Po ciężkiej porażce zawodowej regeneruję się błyskawicznie, nie tracąc optymizmu ani wiary w kolejne przedsięwzięcia.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -6036,7 +6037,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 42,
-    "text": "Po popełnieniu błędu szybko wyciągam wnioski i idę dalej, nie rozpamiętując porażki dniami i nocami.",
+    "text": "Chętnie i szczerze doceniam sukcesy innych na forum publicznym, nie odczuwając przy tym cienia zawiści czy zazdrości.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -6061,7 +6062,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 43,
-    "text": "Zachowuję wewnętrzny spokój i opanowanie nawet w sytuacjach skrajnego chaosu i stresu.",
+    "text": "W nowym zespole lub nieznanym środowisku błyskawicznie adaptuję się do reguł gry i staję się wyraźną, aktywną postacią.",
     "axis": "AT",
     "weight": 2,
     "cogFunc": {
@@ -6086,7 +6087,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 44,
-    "text": "Często analizuję w kółko swoje minione rozmowy i zachowania, zastanawiając się, co mogłem zrobić lepiej.",
+    "text": "Wolę podjąć ryzyko wdrożenia rewolucyjnej, niesprawdzonej dotąd innowacji, niż iść bezpieczną ścieżką stopniowych, kosmetycznych usprawnień.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -6111,7 +6112,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 45,
-    "text": "Mój wewnętrzny krytyk nieustannie podnosi poprzeczkę - nawet wielkie sukcesy dają mi tylko chwilową ulgę.",
+    "text": "Moja ocena merytoryczna pomysłu jest w 100% niezależna od tego, czy prywatnie lubię osobę, która ten pomysł zgłosiła.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -6136,7 +6137,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 46,
-    "text": "Silnie reaguję na stres somatycznie: napięciem mięśni, bezsennością lub gonitwą myśli.",
+    "text": "W zespole natychmiast wprowadzam czytelny podział ról, checklisty weryfikacyjne oraz twarde terminy rozliczenia odpowiedzialności.",
     "axis": "AT",
     "weight": -2,
     "cogFunc": {
@@ -6161,7 +6162,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 47,
-    "text": "Wierzę, że największe dzieła powstają w drodze synergii zespołowej, otwartego dialogu i dzielenia się zasobami.",
+    "text": "Nie potrzebuję nieustannych pochwał i zapewnień z zewnątrz, by wiedzieć, że wykonałem doskonałą, wartościową pracę.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -6186,7 +6187,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 48,
-    "text": "Gdy odnoszę sukces, w pierwszej kolejności podkreślam zasługi całego zespołu i osób wspierających.",
+    "text": "W konflikcie interesów zawsze szukam rozwiązań typu Win-Win, wierząc, że dobro wspólnoty przewyższa partykularne korzyści jednostki.",
     "axis": "CS",
     "weight": 2,
     "cogFunc": {
@@ -6211,7 +6212,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 49,
-    "text": "Najbardziej cenię absolutną niezależność decyzyjną - nie lubię być uzależniony od cudzego tempa pracy.",
+    "text": "Milczenie i brak natychmiastowej informacji zwrotnej ze strony współpracowników odbieram jako zastój – potrzebuję żywego dialogu, by utrzymać tempo.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {
@@ -6236,7 +6237,7 @@ window.QUESTIONS_QUICK_50 = [
   },
   {
     "id": 50,
-    "text": "Gdy mam do wykonania kluczowe zadanie, wolę zrobić je sam od początku do końca, by mieć pewność jakości.",
+    "text": "Podejmując strategiczną decyzję, projektuję w wyobraźni wieloletnie drzewo konsekwencji drugiego i trzeciego rzędu dla całego systemu.",
     "axis": "CS",
     "weight": -2,
     "cogFunc": {

@@ -32,6 +32,13 @@
     screenQuiz: document.getElementById('screen-quiz'),
     screenResults: document.getElementById('screen-results'),
 
+    // Auto-Save Wznowienie Testu
+    resumeBanner: document.getElementById('resume-test-banner'),
+    resumeBannerDesc: document.getElementById('resume-banner-desc'),
+    btnResumeQuiz: document.getElementById('btn-resume-quiz'),
+    btnDiscardQuiz: document.getElementById('btn-discard-quiz'),
+    enneaRichAnalysis: document.getElementById('ennea-rich-analysis'),
+
     // Elementy Quizu
     quizTrackBadge: document.getElementById('quiz-track-badge'),
     quizProgressFill: document.getElementById('quiz-progress-fill'),
@@ -136,6 +143,78 @@
   }
 
   /**
+   * Auto-zapis postępu testu w localStorage
+   */
+  function saveQuizProgress() {
+    try {
+      const progress = {
+        track: state.track,
+        currentIndex: state.currentIndex,
+        answers: state.answers,
+        totalQuestions: state.questions.length,
+        timestamp: Date.now()
+      };
+      localStorage.setItem('psyche_quiz_progress', JSON.stringify(progress));
+    } catch (e) {}
+  }
+
+  function clearQuizProgress() {
+    try {
+      localStorage.removeItem('psyche_quiz_progress');
+    } catch (e) {}
+  }
+
+  function checkResumeProgress() {
+    try {
+      const saved = localStorage.getItem('psyche_quiz_progress');
+      if (!saved) {
+        if (DOM.resumeBanner) DOM.resumeBanner.style.display = 'none';
+        return;
+      }
+      const progress = JSON.parse(saved);
+      if (progress && progress.totalQuestions && progress.currentIndex > 0 && progress.currentIndex < progress.totalQuestions) {
+        if (DOM.resumeBanner) {
+          DOM.resumeBanner.style.display = 'flex';
+          const trackLabel = progress.track === 'QUICK' ? 'Wariant 1: Szybki (50 pytań)' : 'Wariant 2: Szczegółowy (200 pytań)';
+          if (DOM.resumeBannerDesc) {
+            DOM.resumeBannerDesc.textContent = `${trackLabel} • Pytanie ${progress.currentIndex + 1} z ${progress.totalQuestions} (postęp zachowany w pamięci przeglądarki)`;
+          }
+        }
+      } else {
+        if (DOM.resumeBanner) DOM.resumeBanner.style.display = 'none';
+      }
+    } catch (e) {
+      if (DOM.resumeBanner) DOM.resumeBanner.style.display = 'none';
+    }
+  }
+
+  function resumeQuiz() {
+    try {
+      const saved = localStorage.getItem('psyche_quiz_progress');
+      if (!saved) return;
+      const progress = JSON.parse(saved);
+      state.track = progress.track || 'DETAILED';
+      state.currentIndex = progress.currentIndex || 0;
+      state.answers = progress.answers || {};
+      state.isUnlocked = false;
+
+      if (state.track === 'QUICK') {
+        state.questions = window.QUESTIONS_QUICK_50 || [];
+        if (DOM.quizTrackBadge) DOM.quizTrackBadge.textContent = 'Wariant 1: Szybki (50 pytań)';
+      } else {
+        state.questions = window.QUESTIONS_DETAILED_200 || [];
+        if (DOM.quizTrackBadge) DOM.quizTrackBadge.textContent = 'Wariant 2: Szczegółowy (200 pytań - Pełna Precyzja)';
+      }
+
+      if (DOM.resumeBanner) DOM.resumeBanner.style.display = 'none';
+      renderCurrentQuestion();
+      showScreen('quiz');
+    } catch (e) {
+      console.error('Błąd wznawiania testu:', e);
+    }
+  }
+
+  /**
    * Rozpoczęcie testu o wybranym wariancie
    */
   function startTest(track) {
@@ -149,6 +228,7 @@
       localStorage.removeItem('psyche_pending_result');
       localStorage.removeItem('psyche_unlocked');
       localStorage.removeItem('psyche_auth_hash');
+      clearQuizProgress();
     } catch (e) {}
 
     if (track === 'QUICK') {
@@ -159,6 +239,7 @@
       if (DOM.quizTrackBadge) DOM.quizTrackBadge.textContent = 'Wariant 2: Szczegółowy (200 pytań - Pełna Precyzja)';
     }
 
+    saveQuizProgress();
     renderCurrentQuestion();
     showScreen('quiz');
   }
@@ -209,6 +290,17 @@
   }
 
   /**
+   * Cofnięcie do poprzedniego pytania
+   */
+  function prevQuestion() {
+    if (state.currentIndex > 0) {
+      state.currentIndex--;
+      renderCurrentQuestion();
+      saveQuizProgress();
+    }
+  }
+
+  /**
    * Wybór odpowiedzi Likerta
    */
   function selectAnswer(score) {
@@ -216,11 +308,13 @@
     if (!q) return;
 
     state.answers[q.id] = score;
+    saveQuizProgress();
 
     setTimeout(() => {
       if (state.currentIndex < state.questions.length - 1) {
         state.currentIndex++;
         renderCurrentQuestion();
+        saveQuizProgress();
       } else {
         finishQuiz();
       }
@@ -235,10 +329,12 @@
     if (!q) return;
 
     state.answers[q.id] = 'SKIP';
+    saveQuizProgress();
 
     if (state.currentIndex < state.questions.length - 1) {
       state.currentIndex++;
       renderCurrentQuestion();
+      saveQuizProgress();
     } else {
       finishQuiz();
     }
@@ -248,6 +344,7 @@
    * Zakończenie testu i obliczenie wyników przez silnik
    */
   function finishQuiz() {
+    clearQuizProgress();
     const result = window.PSYCHE_ENGINE.calculate(state.answers, state.questions);
     state.lastResult = result;
     try {
@@ -300,6 +397,7 @@
     if (DOM.beebeShadowContainer) DOM.beebeShadowContainer.innerHTML = '';
     if (DOM.enneaHeroCore) DOM.enneaHeroCore.innerHTML = '';
     if (DOM.enneaHeroInfo) DOM.enneaHeroInfo.innerHTML = '';
+    if (DOM.enneaRichAnalysis) DOM.enneaRichAnalysis.innerHTML = '';
     if (DOM.enneaDistributionGrid) DOM.enneaDistributionGrid.innerHTML = '';
     if (DOM.oceanCardsContainer) DOM.oceanCardsContainer.innerHTML = '';
     if (DOM.archetypesContainer) DOM.archetypesContainer.innerHTML = '';
@@ -463,13 +561,14 @@
     if (unlocked) {
       DOM.lockedContainer.classList.remove('is-locked');
       DOM.lockedContainer.classList.add('is-unlocked');
-      DOM.gateLockedForm.style.display = 'none';
+      if (DOM.gateLockedForm) DOM.gateLockedForm.style.display = 'none';
       if (document.getElementById('gate-request-box')) document.getElementById('gate-request-box').style.display = 'none';
       if (document.getElementById('gate-verify-box')) document.getElementById('gate-verify-box').style.display = 'none';
       DOM.gateUnlockedState.style.display = 'block';
     } else {
       DOM.lockedContainer.classList.add('is-locked');
       DOM.lockedContainer.classList.remove('is-unlocked');
+      if (DOM.gateLockedForm) DOM.gateLockedForm.style.display = 'flex';
       if (document.getElementById('gate-request-box')) document.getElementById('gate-request-box').style.display = 'block';
       if (document.getElementById('gate-verify-box')) document.getElementById('gate-verify-box').style.display = 'block';
       DOM.gateUnlockedState.style.display = 'none';
@@ -592,12 +691,38 @@
         <p class="gate-notice-sub">
           Po otrzymaniu kodu w wiadomości e-mail, wprowadź go w <strong>Kroku 2</strong> poniżej, aby odsłonić pełny profil 64-typowy.
         </p>
+        <div style="margin-top: 12px;">
+          <button type="button" class="btn-jump-to-krok2" id="btn-jump-krok2">
+            👉 Przejdź do pola wpisania kodu (Krok 2) poniżej ↓
+          </button>
+        </div>
       </div>
     `;
 
-    // 7. Rozpoczęcie 30-sekundowego odliczania cooldown
+    document.getElementById('btn-jump-krok2')?.addEventListener('click', () => {
+      const b = document.getElementById('gate-verify-box');
+      if (b) {
+        b.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        b.classList.add('pulse-highlight');
+      }
+      if (DOM.inputVerifyCode) DOM.inputVerifyCode.focus();
+    });
+
+    // 7. Natychmiastowe uwidocznienie Kroku 2, animacja poświaty oraz płynne przewinięcie
+    const verifyBox = document.getElementById('gate-verify-box');
+    if (verifyBox) {
+      verifyBox.style.display = 'block';
+      verifyBox.classList.add('pulse-highlight');
+      verifyBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    if (DOM.gateLockedForm) {
+      DOM.gateLockedForm.style.display = 'flex';
+    }
+
     startResendCooldown();
-    if (DOM.inputVerifyCode) DOM.inputVerifyCode.focus();
+    setTimeout(() => {
+      if (DOM.inputVerifyCode) DOM.inputVerifyCode.focus();
+    }, 400);
   }
 
   /**
@@ -648,10 +773,10 @@
     };
 
     const funcNames = {
-      Ni: 'Intropertyczna Intuicja', Ne: 'Ekstrawertyczna Intuicja',
-      Ti: 'Intropertyczne Myślenie', Te: 'Ekstrawertyczne Myślenie',
-      Fi: 'Intropertyczne Uczucie', Fe: 'Ekstrawertyczne Uczucie',
-      Si: 'Intropertyczne Poznanie', Se: 'Ekstrawertyczne Poznanie'
+      Ni: 'Introwertyczna Intuicja', Ne: 'Ekstrawertyczna Intuicja',
+      Ti: 'Introwertyczne Myślenie', Te: 'Ekstrawertyczne Myślenie',
+      Fi: 'Introwertyczne Uczucie', Fe: 'Ekstrawertyczne Uczucie',
+      Si: 'Introwertyczne Poznanie', Se: 'Ekstrawertyczne Poznanie'
     };
 
     DOM.beebeEgoContainer.innerHTML = ['hero', 'parent', 'child', 'inferior'].map(role => {
@@ -688,39 +813,89 @@
   }
 
   /**
-   * Renderowanie Enneagramu
+   * Renderowanie Enneagramu (Rozbudowane, przystępne dla laika)
    */
   function renderEnneagram(ennea) {
-    const enneaTitles = {
-      1: 'Reformator / Perfekcjonista', 2: 'Pomocnik / Dawca', 3: 'Zdobywca / Osiągający',
-      4: 'Indywidualista / Romantyk', 5: 'Obserwator / Badacz', 6: 'Lojalista / Sceptyk',
-      7: 'Entuzjasta / Epikurejczyk', 8: 'Wyzywający / Przywódca', 9: 'Rozjemca / Mediator'
+    const K = window.PSYCHE_KNOWLEDGE || {};
+    const coreMap = K.ENNEAGRAM_CORE_TYPES || {};
+    const wingsMap = K.ENNEAGRAM_WINGS_DETAILS || {};
+
+    const wingDetail = wingsMap[ennea.wing] || {
+      title: `Typ ${ennea.core} (${ennea.wing})`,
+      subtitle: '„Unikalna dynamika motywacyjna”',
+      motivation: 'Dążenie do spójności wewnętrznej i realizacja własnego potencjału.',
+      fear: 'Lęk przed utratą tożsamości i utratą kontroli nad własnym życiem.',
+      stress: 'W stresie przyjmuje obronne strategie unikania i izolacji.',
+      growth: 'W rozwoju integruje nowe zasoby i odnajduje spokój.',
+      strengths: 'Wysoka motywacja, wierność zasadom, unikalna perspektywa.',
+      traps: 'Nadmierne przywiązanie do własnych mechanizmów obronnych.'
     };
 
     DOM.enneaHeroCore.innerHTML = `
-      <div style="font-size: 32px; font-weight: 900; color: #8b5cf6;">${ennea.wing}</div>
-      <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8;">Typ + Skrzydło</div>
+      <div style="font-size: 34px; font-weight: 900; color: #a78bfa; letter-spacing: 1px;">${ennea.wing}</div>
+      <div style="font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Typ + Skrzydło</div>
     `;
+
+    const triadTipKey = ennea.triad.includes('Głowa') ? 'triada-glowy' : (ennea.triad.includes('Serce') ? 'triada-serca' : 'triada-ciala');
 
     DOM.enneaHeroInfo.innerHTML = `
-      <h3 style="font-size: 19px; color: #fff; margin-bottom: 4px;">Typ ${ennea.core}: ${enneaTitles[ennea.core]}</h3>
-      <p style="font-size: 13.5px; color: #cbd5e1; margin: 0;"><strong>Triada psychologiczna:</strong> ${ennea.triad}</p>
+      <h3 style="font-size: 21px; color: #fff; margin-bottom: 4px; font-weight: 800;">${wingDetail.title}</h3>
+      <div style="font-size: 13.5px; color: #c084fc; font-weight: 600; margin-bottom: 6px;">${wingDetail.subtitle}</div>
+      <p style="font-size: 13px; color: #cbd5e1; margin: 0;">
+        <strong>Triada psychologiczna:</strong> 
+        <span class="psyche-tooltip-trigger" data-tip="${triadTipKey}">
+          ${ennea.triad} <span class="tip-icon">ⓘ</span>
+        </span>
+      </p>
     `;
 
+    // 4-blokowe rozwinięcie analizy psychologicznej
+    if (DOM.enneaRichAnalysis) {
+      DOM.enneaRichAnalysis.innerHTML = `
+        <div class="ennea-rich-grid">
+          <div class="ennea-rich-card">
+            <div class="ennea-card-title ennea-title-cyan">🎯 Główna Motywacja i Pragnienie</div>
+            <div class="ennea-card-body">${wingDetail.motivation}</div>
+          </div>
+          <div class="ennea-rich-card">
+            <div class="ennea-card-title ennea-title-red">⚠️ Podstawowy Lęk Podświadomy</div>
+            <div class="ennea-card-body">${wingDetail.fear}</div>
+          </div>
+          <div class="ennea-rich-card">
+            <div class="ennea-card-title ennea-title-purple">🔄 Dynamika w Stresie i w Komforcie</div>
+            <div class="ennea-card-body">
+              <div class="ennea-subitem"><strong>W stresie (dezintegracja):</strong> ${wingDetail.stress}</div>
+              <div class="ennea-subitem"><strong>W rozwoju (integracja):</strong> ${wingDetail.growth}</div>
+            </div>
+          </div>
+          <div class="ennea-rich-card">
+            <div class="ennea-card-title ennea-title-emerald">💎 Mocne Strony i Pułapki Życiowe</div>
+            <div class="ennea-card-body">
+              <div class="ennea-subitem"><strong>Mocne strony:</strong> ${wingDetail.strengths}</div>
+              <div class="ennea-subitem"><strong>Ślepe plamki / pułapki:</strong> ${wingDetail.traps}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Wykres 9 typów ze zwięzłą charakterystyką każdego typu
     DOM.enneaDistributionGrid.innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => {
-      const score = ennea.scores[num] || 0;
-      const pct = Math.min(100, Math.max(10, Math.round(score * 12 + 40)));
+      const data = ennea.distribution ? ennea.distribution[num] : null;
+      const pct = data ? data.pct : Math.min(98, Math.max(10, Math.round(((ennea.scores[num] || 0) + 10) / 20 * 100)));
       const isDominant = (num === ennea.core);
+      const coreInfo = coreMap[num] || {};
       return `
         <div class="ennea-card-box ${isDominant ? 'is-dominant' : ''}">
-          <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #8b5cf6; margin-bottom: 4px;">
-            <span>Typ ${num} ${isDominant ? '★' : ''}</span>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #a78bfa; margin-bottom: 4px;">
+            <span>Typ ${num} ${isDominant ? '★ (GŁÓWNY)' : ''}</span>
             <span>${pct}%</span>
           </div>
-          <div style="font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px;">${enneaTitles[num].split('/')[0]}</div>
-          <div style="height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;">
-            <div style="width: ${pct}%; height: 100%; background: #8b5cf6;"></div>
+          <div style="font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 4px;">${coreInfo.name ? coreInfo.name.split('/')[0] : `Typ ${num}`}</div>
+          <div style="height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; margin-bottom: 6px;">
+            <div style="width: ${pct}%; height: 100%; background: ${isDominant ? '#8b5cf6' : 'rgba(139,92,246,0.6)'};"></div>
           </div>
+          <div class="ennea-item-oneliner">${coreInfo.shortDesc || ''}</div>
         </div>
       `;
     }).join('');
@@ -742,13 +917,13 @@
       const data = ocean[t.key];
       const color = data.level === 'Wysoka' ? '#10b981' : (data.level === 'Niska' ? '#3b82f6' : '#f59e0b');
       return `
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px; margin-bottom: 12px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <div class="ocean-card-item">
+          <div class="ocean-card-header">
             <div style="display: flex; align-items: center; gap: 8px;">
               <span style="background: rgba(255,255,255,0.1); font-weight: 800; font-size: 12px; padding: 2px 8px; border-radius: 4px;">${t.key}</span>
-              <strong style="color: #fff; font-size: 15px;">${t.label}</strong>
+              <strong class="ocean-trait-name">${t.label}</strong>
             </div>
-            <span style="font-size: 12px; font-weight: 700; color: ${color}; border: 1px solid ${color}; padding: 2px 8px; border-radius: 4px;">${data.pct}% • ${data.level}</span>
+            <span class="ocean-level-badge" style="color: ${color}; border-color: ${color};">${data.pct}% • ${data.level}</span>
           </div>
           <div style="height: 7px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 10px;">
             <div style="width: ${data.pct}%; height: 100%; background: ${color};"></div>
@@ -761,31 +936,91 @@
   }
 
   /**
-   * Renderowanie Archetypów
+   * Renderowanie Archetypów (Rozbudowane, przystępne dla laika)
    */
   function renderArchetypes(arch) {
+    const K = window.PSYCHE_KNOWLEDGE || {};
+    const archMap = K.ARCHETYPES_DETAILS || {};
+
+    const domDetail = archMap[arch.dominant.name] || {
+      name: arch.dominant.name,
+      short: 'Główny archetyp przewodni Twojego mitu osobistego.',
+      gift: 'Wysoka kreatywność, wierność zasadom i autentyczność.',
+      shadow: 'Skłonność do przeciążenia i zniekształcenia pod wpływem stresu.',
+      strategy: 'Pełni kluczową rolę w określaniu kierunku i priorytetów.'
+    };
+
+    const secDetail = archMap[arch.secondary.name] || {
+      name: arch.secondary.name,
+      short: 'Archetyp wspierający realizację nadrzędnych celów.',
+      gift: 'Komplementarne zdolności adaptacyjne i elastyczność.',
+      shadow: 'Możliwe konflikty priorytetów z archetypem głównym.',
+      strategy: 'Dostarcza narzędzi wykonawczych i balansu.'
+    };
+
     DOM.archetypesContainer.innerHTML = `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 20px;">
-        <div style="background: rgba(6, 182, 212, 0.08); border: 1px solid rgba(6, 182, 212, 0.4); border-radius: 12px; padding: 20px;">
-          <span style="font-size: 11px; font-weight: 800; color: #06b6d4; letter-spacing: 1px; text-transform: uppercase;">Archetyp Dominujący</span>
-          <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin: 4px 0 8px 0;">${arch.dominant.name} (${arch.dominant.pct}%)</h3>
-          <p style="font-size: 13px; color: #cbd5e1; margin: 0; line-height: 1.5;">Główny archetyp określa jądro Twojego mitu osobistego, filtr poznawczy świata oraz nadrzędne dążenie psychologiczne.</p>
+      <!-- KARTY GŁÓWNYCH ARCHETYPÓW -->
+      <div class="archetype-rich-grid">
+        <!-- ARCHETYP DOMINUJĄCY -->
+        <div class="archetype-rich-card dominant">
+          <span class="arch-pill-badge badge-dominant">Archetyp Dominujący (${arch.dominant.pct}%)</span>
+          <h3 class="arch-card-heading">${domDetail.name}</h3>
+          <div class="arch-motto-oneliner">${domDetail.short}</div>
+          
+          <div class="arch-block-row">
+            <div class="arch-block-label label-gift">⚡ Dar / Supermoc Archetypu:</div>
+            <div class="arch-block-desc">${domDetail.gift}</div>
+          </div>
+          <div class="arch-block-row">
+            <div class="arch-block-label label-shadow">🌑 Cień / Zagrożenie (przy nadmiernej dominacji):</div>
+            <div class="arch-block-desc">${domDetail.shadow}</div>
+          </div>
+          <div class="arch-block-row">
+            <div class="arch-block-label label-strategy">🧭 Strategia Życiowa i Rola w Zespole/Relacjach:</div>
+            <div class="arch-block-desc">${domDetail.strategy}</div>
+          </div>
         </div>
-        <div style="background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.4); border-radius: 12px; padding: 20px;">
-          <span style="font-size: 11px; font-weight: 800; color: #8b5cf6; letter-spacing: 1px; text-transform: uppercase;">Archetyp Wspierający</span>
-          <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin: 4px 0 8px 0;">${arch.secondary.name} (${arch.secondary.pct}%)</h3>
-          <p style="font-size: 13px; color: #cbd5e1; margin: 0; line-height: 1.5;">Dostarcza komplementarnych narzędzi adaptacyjnych, wzmacniając motywację głównego archetypu.</p>
+
+        <!-- ARCHETYP WSPIERAJĄCY -->
+        <div class="archetype-rich-card secondary">
+          <span class="arch-pill-badge badge-secondary">Archetyp Wspierający (${arch.secondary.pct}%)</span>
+          <h3 class="arch-card-heading">${secDetail.name}</h3>
+          <div class="arch-motto-oneliner">${secDetail.short}</div>
+          
+          <div class="arch-block-row">
+            <div class="arch-block-label label-gift">⚡ Dar / Supermoc Archetypu:</div>
+            <div class="arch-block-desc">${secDetail.gift}</div>
+          </div>
+          <div class="arch-block-row">
+            <div class="arch-block-label label-shadow">🌑 Cień / Zagrożenie (przy nadmiernej dominacji):</div>
+            <div class="arch-block-desc">${secDetail.shadow}</div>
+          </div>
+          <div class="arch-block-row">
+            <div class="arch-block-label label-strategy">🧭 Strategia Życiowa i Rola w Zespole/Relacjach:</div>
+            <div class="arch-block-desc">${secDetail.strategy}</div>
+          </div>
         </div>
       </div>
-      <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 12px; padding: 18px;">
-        <h4 style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 12px;">Hierarchia Wszystkich 12 Archetypów Pearsona:</h4>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
-          ${arch.ranking.map((a, i) => `
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 6px; font-size: 12px; display: flex; justify-content: space-between;">
-              <span><strong>#${i + 1}</strong> ${a.name}</span>
-              <span style="color: ${i === 0 ? '#06b6d4' : (i === 1 ? '#8b5cf6' : '#94a3b8')}; font-weight: 700;">${a.pct}%</span>
-            </div>
-          `).join('')}
+
+      <!-- HIERARCHIA WSZYSTKICH 12 ARCHETYPÓW Z KRÓTKIM OPISEM -->
+      <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px;">
+        <h4 class="arch-hierarchy-title">Hierarchia Wszystkich 12 Archetypów Pearsona:</h4>
+        <div>
+          ${arch.ranking.map((a, i) => {
+            const detail = archMap[a.name] || {};
+            const isTop1 = (i === 0);
+            const isTop2 = (i === 1);
+            const pctColor = isTop1 ? '#06b6d4' : (isTop2 ? '#8b5cf6' : '#94a3b8');
+            return `
+              <div class="arch-rank-detail-card">
+                <div class="arch-rank-header">
+                  <span class="arch-rank-name">#${i + 1} ${detail.name || a.name}</span>
+                  <span class="arch-rank-pct" style="color: ${pctColor};">${a.pct}%</span>
+                </div>
+                <div class="arch-rank-desc">${detail.short || ''}</div>
+              </div>
+            `;
+          }).join('')}
         </div>
       </div>
     `;
@@ -954,19 +1189,52 @@
     DOM.btnSkipQuestion?.addEventListener('click', skipCurrentQuestion);
 
     // Nawigacja pytań
-    DOM.btnPrevQuestion?.addEventListener('click', () => {
-      if (state.currentIndex > 0) {
-        state.currentIndex--;
-        renderCurrentQuestion();
-      }
-    });
+    DOM.btnPrevQuestion?.addEventListener('click', prevQuestion);
 
     DOM.btnNextQuestion?.addEventListener('click', () => {
       if (state.currentIndex < state.questions.length - 1) {
         state.currentIndex++;
         renderCurrentQuestion();
+        saveQuizProgress();
       } else {
         finishQuiz();
+      }
+    });
+
+    // Auto-Save Wznowienie / Reset
+    DOM.btnResumeQuiz?.addEventListener('click', resumeQuiz);
+    DOM.btnDiscardQuiz?.addEventListener('click', () => {
+      clearQuizProgress();
+      if (DOM.resumeBanner) DOM.resumeBanner.style.display = 'none';
+    });
+
+    // Skróty klawiszowe (Desktop)
+    window.addEventListener('keydown', (e) => {
+      if (!DOM.screenQuiz || !DOM.screenQuiz.classList.contains('active')) return;
+      const tag = (document.activeElement?.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea') return;
+
+      if (e.key >= '1' && e.key <= '5') {
+        e.preventDefault();
+        selectAnswer(parseInt(e.key, 10));
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevQuestion();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        const q = state.questions[state.currentIndex];
+        if (q && state.answers[q.id] !== undefined) {
+          if (state.currentIndex < state.questions.length - 1) {
+            state.currentIndex++;
+            renderCurrentQuestion();
+            saveQuizProgress();
+          } else {
+            finishQuiz();
+          }
+        }
+      } else if ((e.key === 's' || e.key === 'S' || e.key === ' ') && state.track !== 'QUICK') {
+        e.preventDefault();
+        skipCurrentQuestion();
       }
     });
 
@@ -1066,11 +1334,69 @@
     return false;
   }
 
+  /**
+   * Obsługa interaktywnych tooltipów psychologicznych
+   */
+  function setupTooltips() {
+    const tooltipEl = document.getElementById('psyche-floating-tooltip');
+    if (!tooltipEl) return;
+
+    document.addEventListener('mouseover', (e) => {
+      const trigger = e.target.closest('.psyche-tooltip-trigger');
+      if (trigger) {
+        const tipKey = trigger.getAttribute('data-tip');
+        const text = window.PSYCHE_KNOWLEDGE?.PSYCHOLOGICAL_TOOLTIPS?.[tipKey];
+        if (text) {
+          tooltipEl.textContent = text;
+          tooltipEl.classList.add('visible');
+          const rect = trigger.getBoundingClientRect();
+          const top = rect.bottom + window.scrollY + 6;
+          let left = rect.left + window.scrollX - 20;
+          if (left + 320 > window.innerWidth) left = window.innerWidth - 330;
+          if (left < 10) left = 10;
+          tooltipEl.style.top = `${top}px`;
+          tooltipEl.style.left = `${left}px`;
+        }
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      const trigger = e.target.closest('.psyche-tooltip-trigger');
+      if (trigger) {
+        tooltipEl.classList.remove('visible');
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.psyche-tooltip-trigger');
+      if (trigger) {
+        e.stopPropagation();
+        const tipKey = trigger.getAttribute('data-tip');
+        const text = window.PSYCHE_KNOWLEDGE?.PSYCHOLOGICAL_TOOLTIPS?.[tipKey];
+        if (text) {
+          tooltipEl.textContent = text;
+          tooltipEl.classList.toggle('visible');
+          const rect = trigger.getBoundingClientRect();
+          const top = rect.bottom + window.scrollY + 6;
+          let left = rect.left + window.scrollX - 20;
+          if (left + 320 > window.innerWidth) left = window.innerWidth - 330;
+          if (left < 10) left = 10;
+          tooltipEl.style.top = `${top}px`;
+          tooltipEl.style.left = `${left}px`;
+        }
+      } else {
+        tooltipEl.classList.remove('visible');
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initEvents();
+    setupTooltips();
     const restored = restoreSavedState();
     if (!restored) {
       showScreen('intro');
+      checkResumeProgress();
     }
   });
 

@@ -182,7 +182,9 @@ window.PSYCHE_ENGINE = (function() {
     const oceanMax = { O: 0, C: 0, E: 0, A: 0, N: 0 };
 
     const enneaRaw = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
+    const enneaMax = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 };
     const archRaw = {};
+    const archMax = {};
     const gallupDirect = {};
 
     let answeredCount = 0;
@@ -224,18 +226,20 @@ window.PSYCHE_ENGINE = (function() {
         }
       }
 
-      // 4. Enneagram
+      // 4. Akumulacja Enneagramu (pełna symetryczna skala Likerta)
       if (q.ennea) {
         for (let e in q.ennea) {
-          if (likertPoint > 0) {
-            enneaRaw[e] = (enneaRaw[e] || 0) + likertPoint * q.ennea[e];
-          }
+          const w = q.ennea[e] || 1;
+          enneaRaw[e] = (enneaRaw[e] || 0) + likertPoint * w;
+          enneaMax[e] = (enneaMax[e] || 0) + 2 * Math.abs(w);
         }
       }
 
-      // 5. Archetyp
-      if (q.archetype && likertPoint > 0) {
-        archRaw[q.archetype] = (archRaw[q.archetype] || 0) + likertPoint;
+      // 5. Akumulacja Archetypów (pełna symetryczna skala Likerta)
+      if (q.archetype) {
+        const arch = q.archetype;
+        archRaw[arch] = (archRaw[arch] || 0) + likertPoint;
+        archMax[arch] = (archMax[arch] || 0) + 2;
       }
 
       // 6. Gallup bezpośredni
@@ -271,7 +275,7 @@ window.PSYCHE_ENGINE = (function() {
     const base4 = `${letter1}${letter2}${letter3}${letter4}`;
     const code6 = `${base4}-${letter5}${letter6}`;
 
-    // Normalizacja Funkcji Kognitywnych (-%)
+    // Normalizacja Funkcji Kognitywnych (0–100%)
     const normalizedCogFunc = {};
     for (let f in cogRaw) {
       const max = cogMax[f] || 1;
@@ -304,18 +308,28 @@ window.PSYCHE_ENGINE = (function() {
       oceanNormalized[k] = { pct, level, academicInterpretation: interpretation, facets: oceanFacetsMap[k] };
     });
 
-    // Enneagram (Typ rdzenny + skrzydła)
+    // Enneagram (Typ rdzenny + skrzydła + pełna normalizacja percentylowa)
+    const enneaDistribution = {};
     let bestEnnea = 1;
-    let maxEnneaScore = -1;
+    let maxEnneaRatio = -Infinity;
+
     for (let i = 1; i <= 9; i++) {
-      if ((enneaRaw[i] || 0) > maxEnneaScore) {
-        maxEnneaScore = enneaRaw[i] || 0;
+      const maxVal = enneaMax[i] || 1;
+      const raw = enneaRaw[i] || 0;
+      // Normalizacja percentylowa na symetrycznej skali Likerta [-maxVal, +maxVal] do [10%, 98%]
+      const ratio = (raw + maxVal) / (2 * maxVal);
+      const pct = Math.min(98, Math.max(10, Math.round(ratio * 100)));
+      enneaDistribution[i] = { score: raw, max: maxVal, pct };
+
+      if (ratio > maxEnneaRatio) {
+        maxEnneaRatio = ratio;
         bestEnnea = i;
       }
     }
+
     const leftWing = bestEnnea === 1 ? 9 : bestEnnea - 1;
     const rightWing = bestEnnea === 9 ? 1 : bestEnnea + 1;
-    const wing = (enneaRaw[rightWing] || 0) >= (enneaRaw[leftWing] || 0) ? rightWing : leftWing;
+    const wing = ((enneaDistribution[rightWing]?.pct || 0) >= (enneaDistribution[leftWing]?.pct || 0)) ? rightWing : leftWing;
     const enneaWingString = `${bestEnnea}w${wing}`;
 
     const enneaTriads = {
@@ -324,17 +338,28 @@ window.PSYCHE_ENGINE = (function() {
       5: 'Głowa / Lęk (Head Triad)', 6: 'Głowa / Lęk (Head Triad)', 7: 'Głowa / Lęk (Head Triad)'
     };
 
-    // Archetypy Carol Pearson
+    // Archetypy Carol Pearson (Pełna normalizacja percentylowa 12-98%)
     const defaultArchetypes = ['Mędrzec', 'Twórca', 'Władca', 'Wojownik', 'Magik', 'Buntownik', 'Kochanek', 'Odkrywca', 'Opiekun', 'Błazen', 'Niewinny', 'Sierota / Realista'];
-    defaultArchetypes.forEach(a => { if (archRaw[a] === undefined) archRaw[a] = 1; });
+    defaultArchetypes.forEach(a => {
+      if (archRaw[a] === undefined) archRaw[a] = 0;
+      if (archMax[a] === undefined) archMax[a] = 1;
+    });
 
-    const sortedArch = Object.entries(archRaw)
-      .sort((a, b) => b[1] - a[1])
-      .map(([name, score], idx) => ({
+    const sortedArch = defaultArchetypes.map(name => {
+      const raw = archRaw[name] || 0;
+      const maxVal = archMax[name] || 1;
+      const ratio = (raw + maxVal) / (2 * maxVal);
+      const pct = Math.min(98, Math.max(12, Math.round(ratio * 100)));
+      return {
         name,
-        score,
-        pct: Math.min(100, Math.max(15, Math.round(score * 12 + 45 - idx * 4)))
-      }));
+        score: raw,
+        max: maxVal,
+        pct
+      };
+    }).sort((a, b) => {
+      if (b.pct !== a.pct) return b.pct - a.pct;
+      return b.score - a.score;
+    });
 
     // CliftonStrengths 34 Talents Matrix
     const gallupScored = (window.GALLUP_TALENTS || []).map(t => {
@@ -506,7 +531,8 @@ window.PSYCHE_ENGINE = (function() {
         core: bestEnnea,
         wing: enneaWingString,
         triad: enneaTriads[bestEnnea] || 'Głowa / Lęk (Head Triad)',
-        scores: enneaRaw
+        scores: enneaRaw,
+        distribution: enneaDistribution
       },
       archetypes: {
         dominant: sortedArch[0] || { name: 'Mędrzec', pct: 85 },

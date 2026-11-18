@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3.6">
 </head>
 <body>
 
@@ -38,6 +38,21 @@
         </p>
       </header>
 
+      <!-- AUTO-SAVE: BANNER WZNOWIENIA TESTU -->
+      <div id="resume-test-banner" class="resume-test-banner" style="display: none;">
+        <div class="resume-banner-left">
+          <div class="resume-icon-badge">⏱️</div>
+          <div>
+            <h4 class="resume-title">Wykryto niezakończone badanie w toku</h4>
+            <p class="resume-text" id="resume-banner-desc">Wariant: Szczegółowy • Pytanie 42 z 200 (postęp zachowany w pamięci przeglądarki)</p>
+          </div>
+        </div>
+        <div class="resume-banner-actions">
+          <button class="btn-primary-cyan btn-resume-action" id="btn-resume-quiz" type="button">Kontynuuj badanie →</button>
+          <button class="btn-ghost btn-resume-discard" id="btn-discard-quiz" type="button">Zacznij od nowa</button>
+        </div>
+      </div>
+
       <!-- WYBÓR DWÓCH ŚCIEŻEK TESTU -->
       <div class="track-selection-grid">
         <!-- WARIANT 1: SZYBKI (50 PYTAŃ) -->
@@ -46,7 +61,7 @@
           <div class="track-content">
             <h3>Test Podstawowy (Szybki)</h3>
             <div class="track-meta-row">
-              <span class="track-meta-item">⏱ ~- minut</span>
+              <span class="track-meta-item">⏱ ~8–12 minut</span>
               <span class="track-meta-item">📊 50 pytań</span>
             </div>
             <p class="track-desc">
@@ -69,7 +84,7 @@
           <div class="track-content">
             <h3>Test Szczegółowy (200 Pytań)</h3>
             <div class="track-meta-row">
-              <span class="track-meta-item">⏱ ~- minut</span>
+              <span class="track-meta-item">⏱ ~25–35 minut</span>
               <span class="track-meta-item">🔬 Dokładnie 200 pytań</span>
             </div>
             <p class="track-desc">
@@ -151,6 +166,13 @@
           <button class="btn-skip-question" id="btn-skip-question" type="button" title="Pominięcie pytania wyklucza je z mianownika wag, zachowując bezwzględną proporcjonalność">
             <span>⊘ Pomiń pytanie / Nie wiem</span>
           </button>
+        </div>
+
+        <!-- SKRÓTY KLAWISZOWE (DESKTOP) -->
+        <div class="quiz-shortcuts-legend">
+          <span class="shortcut-pill"><kbd>1</kbd>–<kbd>5</kbd> Odpowiedź</span>
+          <span class="shortcut-pill"><kbd>←</kbd> Cofnij pytanie</span>
+          <span class="shortcut-pill"><kbd>S</kbd> / <kbd>Spacja</kbd> Pomiń</span>
         </div>
       </div>
 
@@ -313,10 +335,27 @@
           <p class="section-head-desc">
             Podstawowy mechanizm obronny, rdzenny lęk, pragnienie oraz energetyczny rozkład wszystkich 9 typów osobowości.
           </p>
-          <div style="display: flex; gap: 20px; align-items: center; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.3); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+
+          <!-- KARTA WPROWADZAJĄCA DLA LAIKA -->
+          <div class="edu-explain-box">
+            <div class="edu-box-icon">💡</div>
+            <div class="edu-box-text">
+              <strong>Czym jest Enneagram i jak czytać skrzydła?</strong>
+              Enneagram bada głębokie, podświadome motywacje, lęki i mechanizmy obronne. Główny numer określa Twój rdzenny filtr psychiczny, a skrzydło (np. <strong>5w4</strong>) pokazuje, jak sąsiedni typ modyfikuje i wzbogaca Twój styl działania – nadając Twojej osobowości unikalny odcień.
+            </div>
+          </div>
+
+          <!-- GŁÓWNY BANNER ENNEAGRAMU -->
+          <div class="ennea-hero-banner-box">
             <div id="ennea-hero-core" style="text-align: center; min-width: 100px;"></div>
             <div id="ennea-hero-info"></div>
           </div>
+
+          <!-- POGŁĘBIONA ANALIZA MOTYWACJI I PUŁAPEK -->
+          <div id="ennea-rich-analysis" class="ennea-rich-analysis-container"></div>
+
+          <!-- PEŁNY ROZKŁAD WSZYSTKICH 9 TYPÓW -->
+          <h4 class="ennea-distrib-title">Rozkład Energetyczny Wszystkich 9 Typów Enneagramu:</h4>
           <div class="ennea-score-grid" id="ennea-distribution-grid"></div>
         </div>
 
@@ -325,7 +364,7 @@
           <span class="section-head-pill">Paradygmat Cech (Costa & McCrae)</span>
           <h2 class="section-head-title">3. Model Wielkiej Piątki (Big Five / OCEAN)</h2>
           <p class="section-head-desc">
-            Znormalizowane wyniki percentylowe (-%) wraz z fasetami psychologicznymi dla pięciu głównych osi cech osobowości.
+            Znormalizowane wyniki percentylowe (0–100%) wraz z fasetami psychologicznymi dla pięciu głównych osi cech osobowości.
           </p>
           <div id="ocean-cards-container"></div>
         </div>
@@ -337,6 +376,16 @@
           <p class="section-head-desc">
             Mity przewodnie i struktury tożsamości organizujące życiową narrację, dążenia oraz adaptację do wyzwań.
           </p>
+
+          <!-- KARTA WPROWADZAJĄCA DLA LAIKA -->
+          <div class="edu-explain-box">
+            <div class="edu-box-icon">🏛️</div>
+            <div class="edu-box-text">
+              <strong>Czym są archetypy osobowości?</strong>
+              Archetypy to uniwersalne wzorce narracyjne i matryce tożsamości obecne w ludzkiej psychice (zgodnie z psychologią analityczną C.G. Junga i Carol Pearson). Określają Twój nadrzędny mit osobisty, supermoce/dary, z jakimi wchodzisz w relacje i wyzwania, oraz nieświadome cienie, które mogą prowadzić do błędów decyzyjnych.
+            </div>
+          </div>
+
           <div id="archetypes-unlocked-container"></div>
         </div>
 
@@ -497,9 +546,13 @@
   <!-- UKRYTY KONTENER DO BEZPOŚREDNIEGO DRUKOWANIA -->
   <div id="report-print-container"></div>
 
+  <!-- PŁYWAJĄCY TOOLTIP PSYCHOMETRYCZNY -->
+  <div id="psyche-floating-tooltip" class="psyche-floating-tooltip"></div>
+
   <!-- MODUŁY SKRYPTÓW JS -->
   <script src="js/gallup.js"></script>
   <script src="js/celebrities.js"></script>
+  <script src="js/knowledge.js"></script>
   <script src="js/questions.js"></script>
   <script src="js/engine.js"></script>
   <script src="js/report.js"></script>
